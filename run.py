@@ -147,6 +147,12 @@ def main() -> int:
             log.error("%s: FAILED — %s", brand, errors[brand])
 
     use_local = args.local or not os.environ.get("SUPABASE_URL")
+    if use_local and os.environ.get("GITHUB_ACTIONS"):
+        # A CI runner's local disk is discarded after the job — silent data loss.
+        raise SystemExit(
+            "running in GitHub Actions without SUPABASE_URL/SUPABASE_SERVICE_KEY "
+            "secrets — refusing to fall back to local storage"
+        )
     mode = "dry-run, nothing written"
     if not args.dry_run and all_records:
         if use_local:
