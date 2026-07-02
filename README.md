@@ -21,7 +21,12 @@ Every run (hourly via GitHub Actions, or manual):
 
 ~10 HTTP requests per run total, honest User-Agent, retries with backoff.
 
-## Local mode (no accounts) — CURRENTLY ACTIVE
+> **Current state (2026-07-02):** cloud mode is live — hourly GitHub Actions
+> runs (repo `ryanmano/bathhouse-tracker`, private) writing to Supabase project
+> `rtahlkpxzyjcjtxdryzg`. The local launchd job is unloaded; ~3 early local
+> snapshots remain in `~/BathhouseData/snapshots.db`.
+
+## Local mode (no accounts) — optional alternative
 
 No GitHub or Supabase needed. A macOS launchd job
 (`~/Library/LaunchAgents/com.tenancy.bathhouse-tracker.plist`) runs
