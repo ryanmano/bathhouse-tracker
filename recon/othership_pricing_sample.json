@@ -1,0 +1,3156 @@
+{
+    "slug": "othership",
+    "rows": [
+        {
+            "id": "80081",
+            "className": "Guided Down: Senses",
+            "classType": "Guided Down: Senses",
+            "instructorName": "Maggie Scrantom",
+            "locationId": "48784",
+            "locationName": "Flatiron",
+            "classroomName": "Sauna",
+            "startAt": "2026-07-03T11:00:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "07:00:00",
+            "status": null,
+            "capacity": 60,
+            "spotsRemaining": 57,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/othership/brand/mark-dark-Othership_Symbol_RGB_Purple-1.png",
+            "description": "The senses are our gateway into perceiving and experiencing our surroundings, each other and this world. Each of them is an absolute miracle, though they have become blunted by our modern lifestyle. Together, we will ignite our senses one by one to become fully immersed in the gratitude of our present awareness.\n\nExpect a sauna to sweat, ice bath to drop-in, towel waving, aromatherapy, gentle breathwork, sound healing instruments, periods of complete darkness, sharing and guided meditation.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Maggie Scrantom",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/othership/brand/mark-dark-Othership_Symbol_RGB_Purple-1.png"
+                }
+            ],
+            "studioAddress": [
+                "23 W. 20th St",
+                "New York, NY 10011",
+                "United States"
+            ],
+            "studioPhone": "2123811699",
+            "studioEmail": "flatiron@othership.us",
+            "showStudioAddress": true,
+            "incentive": {
+                "label": "+$9.00 credit",
+                "value": 9,
+                "source": "booko_public_incentives"
+            },
+            "deepLink": "?_mt=%2Fclasses%2F80081%2Freserve&class=80081&date=2026-07-03"
+        },
+        {
+            "id": "80054",
+            "className": "Guided Down: Deep Stretch - 60 min",
+            "classType": "Guided Down: Deep Stretch - 60 min",
+            "instructorName": "Tabisha Coombs",
+            "locationId": "48717",
+            "locationName": "Adelaide",
+            "classroomName": "Sauna*",
+            "startAt": "2026-07-03T11:00:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "07:00:00",
+            "status": null,
+            "capacity": 32,
+            "spotsRemaining": 27,
+            "durationMinutes": 60,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/tabisha.jpg",
+            "description": "Let the sauna's powerful heat be your ally as we unravel tension and rekindle your body's inherent flexibility. We'll cultivate a profound mind-body connection, immersing ourselves in the sensory experience of each posture and movement.\n\nExpect a sauna to sweat, ice bath to drop-in, towel waving, aromatherapy, gentle stretching, sharing and gentle breathwork.",
+            "timezone": "Canada/Eastern",
+            "instructors": [
+                {
+                    "name": "Tabisha Coombs",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/tabisha.jpg"
+                }
+            ],
+            "studioAddress": [
+                "425 Adelaide St W",
+                "Toronto Ontario M5V 3C1",
+                "Canada"
+            ],
+            "studioPhone": null,
+            "studioEmail": "info@othership.us",
+            "showStudioAddress": true,
+            "incentive": {
+                "label": "+$9.00 credit",
+                "value": 9,
+                "source": "booko_public_incentives"
+            },
+            "deepLink": "?_mt=%2Fclasses%2F80054%2Freserve&class=80054&date=2026-07-03"
+        },
+        {
+            "id": "80053",
+            "className": "Guided Down: Deep Stretch - 60 min",
+            "classType": "Guided Down: Deep Stretch - 60 min",
+            "instructorName": "Francis Bueron",
+            "locationId": "48750",
+            "locationName": "Yorkville",
+            "classroomName": "Sauna*",
+            "startAt": "2026-07-03T11:00:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "07:00:00",
+            "status": null,
+            "capacity": 52,
+            "spotsRemaining": 50,
+            "durationMinutes": 60,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/francis_DIOTRFU.jpg",
+            "description": "Let the sauna's powerful heat be your ally as we unravel tension and rekindle your body's inherent flexibility. We'll cultivate a profound mind-body connection, immersing ourselves in the sensory experience of each posture and movement.\n\nExpect a sauna to sweat, ice bath to drop-in, towel waving, aromatherapy, gentle stretching, sharing and gentle breathwork.",
+            "timezone": "America/Toronto",
+            "instructors": [
+                {
+                    "name": "Francis Bueron",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/francis_DIOTRFU.jpg"
+                }
+            ],
+            "studioAddress": [
+                "110 Bloor St W",
+                "Toronto ON M5S 2W7",
+                "Canada"
+            ],
+            "studioPhone": "4169222547",
+            "studioEmail": "yorkville@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80053%2Freserve&class=80053&date=2026-07-03"
+        },
+        {
+            "id": "80059",
+            "className": "Guided Up: Arctic Tundra - 60 min",
+            "classType": "Guided Up: Arctic Tundra - 60 min",
+            "instructorName": "Brian Lamy",
+            "locationId": "48817",
+            "locationName": "Williamsburg",
+            "classroomName": "Sauna",
+            "startAt": "2026-07-03T12:00:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "08:00:00",
+            "status": null,
+            "capacity": 60,
+            "spotsRemaining": 57,
+            "durationMinutes": 60,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/BRIANLAMY.png",
+            "description": "Cultivate resilience and explore the thrilling edge of aliveness with three rounds of guided ice baths, followed by gentle movement and restorative heat. A social experience that offers a unique opportunity to redefine your connection to the cold an unleash your inner power.\n\nExpect a sauna to sweat, multiple ice baths to drop-in, light movement, towel waving, guided breathwork, intention setting, sharing and loud vocal release.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Brian Lamy",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/BRIANLAMY.png"
+                },
+                {
+                    "name": "Kat Radka",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/Screen_Shot_2025-06-20_at_1.55.16_PM.jpg"
+                }
+            ],
+            "studioAddress": [
+                "25 Kent Ave Suite 100",
+                "Brooklyn, New York 11249",
+                "United States"
+            ],
+            "studioPhone": "+2128714505",
+            "studioEmail": "williamsburg@othership.us",
+            "showStudioAddress": true,
+            "incentive": {
+                "label": "+$11.00 credit",
+                "value": 11,
+                "source": "booko_public_incentives"
+            },
+            "deepLink": "?_mt=%2Fclasses%2F80059%2Freserve&class=80059&date=2026-07-03"
+        },
+        {
+            "id": "80080",
+            "className": "Guided All Around: Hardwiring Happiness",
+            "classType": "Guided All Around: Hardwiring Happiness",
+            "instructorName": "Daniel Deist",
+            "locationId": "48784",
+            "locationName": "Flatiron",
+            "classroomName": "Sauna",
+            "startAt": "2026-07-03T12:15:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "08:15:00",
+            "status": null,
+            "capacity": 60,
+            "spotsRemaining": 53,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/Screen_Shot_2025-06-20_at_1.47.34_PM.jpg",
+            "description": "Consider this guided journey a new form of happiness workout. Through a unique combination of guided practices we will uplift your spirits, cultivate resilience and steer your emotional state towards a serene, happy equilibrium.\n\nExpect a sauna to sweat, ice bath to drop-in, towel waving, aromatherapy, breathwork, guided affirmations, sharing, tapping and self-inquiry.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Daniel Deist",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/Screen_Shot_2025-06-20_at_1.47.34_PM.jpg"
+                }
+            ],
+            "studioAddress": [
+                "23 W. 20th St",
+                "New York, NY 10011",
+                "United States"
+            ],
+            "studioPhone": "2123811699",
+            "studioEmail": "flatiron@othership.us",
+            "showStudioAddress": true,
+            "incentive": {
+                "label": "+$9.00 credit",
+                "value": 9,
+                "source": "booko_public_incentives"
+            },
+            "deepLink": "?_mt=%2Fclasses%2F80080%2Freserve&class=80080&date=2026-07-03"
+        },
+        {
+            "id": "80052",
+            "className": "Guided Down: Rose, Thorn, Bud",
+            "classType": "Guided Down: Rose, Thorn, Bud",
+            "instructorName": "Lisa Hwang",
+            "locationId": "48750",
+            "locationName": "Yorkville",
+            "classroomName": "Sauna*",
+            "startAt": "2026-07-03T12:15:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "08:15:00",
+            "status": null,
+            "capacity": 52,
+            "spotsRemaining": 48,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/lisaupload.jpg",
+            "description": "Embark on an exploratory journey designed to help you regulate yourself through introspection and self-discovery. Connect with your authentic self and navigate the diverse landscape of human emotions, thoughts, and feelings.",
+            "timezone": "America/Toronto",
+            "instructors": [
+                {
+                    "name": "Lisa Hwang",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/lisaupload.jpg"
+                }
+            ],
+            "studioAddress": [
+                "110 Bloor St W",
+                "Toronto ON M5S 2W7",
+                "Canada"
+            ],
+            "studioPhone": "4169222547",
+            "studioEmail": "yorkville@othership.us",
+            "showStudioAddress": true,
+            "incentive": {
+                "label": "+$9.00 credit",
+                "value": 9,
+                "source": "booko_public_incentives"
+            },
+            "deepLink": "?_mt=%2Fclasses%2F80052%2Freserve&class=80052&date=2026-07-03"
+        },
+        {
+            "id": "80091",
+            "className": "Free Flow",
+            "classType": "Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48717",
+            "locationName": "Adelaide",
+            "classroomName": "Sauna",
+            "startAt": "2026-07-03T12:45:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "08:45:00",
+            "status": null,
+            "capacity": 17,
+            "spotsRemaining": 12,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a 75-minute self-guided journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others.\n\nDuring Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support.\n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance, curated soundscape and human connection.\n\nConsider our Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "Canada/Eastern",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "425 Adelaide St W",
+                "Toronto Ontario M5V 3C1",
+                "Canada"
+            ],
+            "studioPhone": null,
+            "studioEmail": "info@othership.us",
+            "showStudioAddress": true,
+            "incentive": {
+                "label": "+$5.00 credit",
+                "value": 5,
+                "source": "booko_public_incentives"
+            },
+            "deepLink": "?_mt=%2Fclasses%2F80091%2Freserve&class=80091&date=2026-07-03"
+        },
+        {
+            "id": "80090",
+            "className": "Free Flow",
+            "classType": "Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48717",
+            "locationName": "Adelaide",
+            "classroomName": "Sauna.",
+            "startAt": "2026-07-03T13:00:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "09:00:00",
+            "status": null,
+            "capacity": 17,
+            "spotsRemaining": 12,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a 75-minute self-guided journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others.\n\nDuring Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support.\n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance, curated soundscape and human connection.\n\nConsider our Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "Canada/Eastern",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "425 Adelaide St W",
+                "Toronto Ontario M5V 3C1",
+                "Canada"
+            ],
+            "studioPhone": null,
+            "studioEmail": "info@othership.us",
+            "showStudioAddress": true,
+            "incentive": {
+                "label": "+$7.00 credit",
+                "value": 7,
+                "source": "booko_public_incentives"
+            },
+            "deepLink": "?_mt=%2Fclasses%2F80090%2Freserve&class=80090&date=2026-07-03"
+        },
+        {
+            "id": "80089",
+            "className": "Free Flow",
+            "classType": "Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48717",
+            "locationName": "Adelaide",
+            "classroomName": "Sauna..",
+            "startAt": "2026-07-03T13:30:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "09:30:00",
+            "status": null,
+            "capacity": 17,
+            "spotsRemaining": 17,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a 75-minute self-guided journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others.\n\nDuring Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support.\n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance, curated soundscape and human connection.\n\nConsider our Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "Canada/Eastern",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "425 Adelaide St W",
+                "Toronto Ontario M5V 3C1",
+                "Canada"
+            ],
+            "studioPhone": null,
+            "studioEmail": "info@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80089%2Freserve&class=80089&date=2026-07-03"
+        },
+        {
+            "id": "80062",
+            "className": "Guided All Around: Reset",
+            "classType": "Guided All Around: Reset",
+            "instructorName": "Ziyan Popatia",
+            "locationId": "48750",
+            "locationName": "Yorkville",
+            "classroomName": "Sauna*",
+            "startAt": "2026-07-03T13:30:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "09:30:00",
+            "status": null,
+            "capacity": 52,
+            "spotsRemaining": 49,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/11_FBpEkoA.png",
+            "description": "Release physical and emotional tension, resetting your nervous system to rediscover your inner balance. Embrace the transformative effects of breathwork, intentional sighing, and gentle movement, guiding you from overwhelm to an anchoring sense of calm.\n\nExpect a sauna to sweat, ice bath to drop-in, towel waving, aromatherapy, gentle movement, breathwork, vocal toning, sharing and self massage.",
+            "timezone": "America/Toronto",
+            "instructors": [
+                {
+                    "name": "Ziyan Popatia",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/11_FBpEkoA.png"
+                }
+            ],
+            "studioAddress": [
+                "110 Bloor St W",
+                "Toronto ON M5S 2W7",
+                "Canada"
+            ],
+            "studioPhone": "4169222547",
+            "studioEmail": "yorkville@othership.us",
+            "showStudioAddress": true,
+            "incentive": {
+                "label": "+$9.00 credit",
+                "value": 9,
+                "source": "booko_public_incentives"
+            },
+            "deepLink": "?_mt=%2Fclasses%2F80062%2Freserve&class=80062&date=2026-07-03"
+        },
+        {
+            "id": "80056",
+            "className": "Guided Down: Embodied",
+            "classType": "Guided Down: Embodied",
+            "instructorName": "Rachel Towne",
+            "locationId": "48784",
+            "locationName": "Flatiron",
+            "classroomName": "Sauna",
+            "startAt": "2026-07-03T13:30:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "09:30:00",
+            "status": null,
+            "capacity": 60,
+            "spotsRemaining": 51,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/Racheltowne.png",
+            "description": "Experience deep release and relaxation as you unwind tension and enhance your range of motion. This tranquil class merges the healing properties of heat with thoughtfully curated stretching and mobility techniques to enhance your well-being.\n\nExpect a sauna to sweat, ice bath to drop-in, towel waving, stretching, gentle breathwork, aromatherapy, sharing and towel waving.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Rachel Towne",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/Racheltowne.png"
+                }
+            ],
+            "studioAddress": [
+                "23 W. 20th St",
+                "New York, NY 10011",
+                "United States"
+            ],
+            "studioPhone": "2123811699",
+            "studioEmail": "flatiron@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80056%2Freserve&class=80056&date=2026-07-03"
+        },
+        {
+            "id": "80060",
+            "className": "Guided Up: Self-Care Sweat",
+            "classType": "Guided Up: Self-Care Sweat",
+            "instructorName": "Kat Radka",
+            "locationId": "48817",
+            "locationName": "Williamsburg",
+            "classroomName": "Sauna",
+            "startAt": "2026-07-03T13:45:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "09:45:00",
+            "status": null,
+            "capacity": 60,
+            "spotsRemaining": 43,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/Screen_Shot_2025-06-20_at_1.55.16_PM.jpg",
+            "description": "Let the warmth envelop you as we indulge in this rejuvenating journey of self-care and appreciation for our bodies. Rediscover your inner radiance and naturally nurture your body through this immersive, cleansing experience. \n\nExpect a sauna to sweat, ice bath to drop-in, towel waving, aromatherapy, lymphatic drainage, Gua-sha, essential oil infused face towels, sharing and self-massage.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Kat Radka",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/Screen_Shot_2025-06-20_at_1.55.16_PM.jpg"
+                }
+            ],
+            "studioAddress": [
+                "25 Kent Ave Suite 100",
+                "Brooklyn, New York 11249",
+                "United States"
+            ],
+            "studioPhone": "+2128714505",
+            "studioEmail": "williamsburg@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80060%2Freserve&class=80060&date=2026-07-03"
+        },
+        {
+            "id": "80088",
+            "className": "Free Flow",
+            "classType": "Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48717",
+            "locationName": "Adelaide",
+            "classroomName": "Sauna...",
+            "startAt": "2026-07-03T14:00:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "10:00:00",
+            "status": null,
+            "capacity": 17,
+            "spotsRemaining": 13,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a 75-minute self-guided journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others.\n\nDuring Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support.\n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance, curated soundscape and human connection.\n\nConsider our Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "Canada/Eastern",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "425 Adelaide St W",
+                "Toronto Ontario M5V 3C1",
+                "Canada"
+            ],
+            "studioPhone": null,
+            "studioEmail": "info@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80088%2Freserve&class=80088&date=2026-07-03"
+        },
+        {
+            "id": "80021",
+            "className": "Free Flow",
+            "classType": "Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48717",
+            "locationName": "Adelaide",
+            "classroomName": "Sauna....",
+            "startAt": "2026-07-03T14:15:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "10:15:00",
+            "status": null,
+            "capacity": 8,
+            "spotsRemaining": 4,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a 75-minute self-guided journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others.\n\nDuring Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support.\n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance, curated soundscape and human connection.\n\nConsider our Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "Canada/Eastern",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "425 Adelaide St W",
+                "Toronto Ontario M5V 3C1",
+                "Canada"
+            ],
+            "studioPhone": null,
+            "studioEmail": "info@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80021%2Freserve&class=80021&date=2026-07-03"
+        },
+        {
+            "id": "80057",
+            "className": "Guided All Around: Loving Kindness",
+            "classType": "Guided All Around: Loving Kindness",
+            "instructorName": "M.E. Gonzo",
+            "locationId": "48784",
+            "locationName": "Flatiron",
+            "classroomName": "Sauna",
+            "startAt": "2026-07-03T14:45:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "10:45:00",
+            "status": null,
+            "capacity": 60,
+            "spotsRemaining": 52,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/Screen_Shot_2025-06-20_at_1.51.45_PM.jpg",
+            "description": "An invitation to nurture a profound state of mind\u2014cultivating loving-kindness for ourselves and all living beings. This guided journey is a gateway to discovering a deeper sense of compassion and kindness within.\n\nExpect a sauna to sweat, ice bath to drop-in, towel waving, aromatherapy, breathwork, self inquiry, eye gazing, periods of complete darkness, sharing and guided connection.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "M.E. Gonzo",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/Screen_Shot_2025-06-20_at_1.51.45_PM.jpg"
+                }
+            ],
+            "studioAddress": [
+                "23 W. 20th St",
+                "New York, NY 10011",
+                "United States"
+            ],
+            "studioPhone": "2123811699",
+            "studioEmail": "flatiron@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80057%2Freserve&class=80057&date=2026-07-03"
+        },
+        {
+            "id": "80051",
+            "className": "Guided Up: Arctic Tundra",
+            "classType": "Guided Up: Arctic Tundra",
+            "instructorName": "Lammy Clark",
+            "locationId": "48750",
+            "locationName": "Yorkville",
+            "classroomName": "Sauna*",
+            "startAt": "2026-07-03T14:45:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "10:45:00",
+            "status": null,
+            "capacity": 52,
+            "spotsRemaining": 49,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/othership/brand/mark-dark-Othership_Symbol_RGB_Purple-1.png",
+            "description": "Cultivate resilience and explore the thrilling edge of aliveness with three rounds of guided ice baths, followed by gentle movement and restorative heat. A social experience that offers a unique opportunity to redefine your connection to the cold an unleash your inner power.\n\nExpect a sauna to sweat, multiple ice baths to drop-in, light movement, towel waving, guided breathwork, intention setting and loud vocal release.",
+            "timezone": "America/Toronto",
+            "instructors": [
+                {
+                    "name": "Lammy Clark",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/othership/brand/mark-dark-Othership_Symbol_RGB_Purple-1.png"
+                },
+                {
+                    "name": "Lisa Hwang",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/lisaupload.jpg"
+                }
+            ],
+            "studioAddress": [
+                "110 Bloor St W",
+                "Toronto ON M5S 2W7",
+                "Canada"
+            ],
+            "studioPhone": "4169222547",
+            "studioEmail": "yorkville@othership.us",
+            "showStudioAddress": true,
+            "incentive": {
+                "label": "+$9.00 credit",
+                "value": 9,
+                "source": "booko_public_incentives"
+            },
+            "deepLink": "?_mt=%2Fclasses%2F80051%2Freserve&class=80051&date=2026-07-03"
+        },
+        {
+            "id": "84963",
+            "className": "Free Flow",
+            "classType": "Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48817",
+            "locationName": "Williamsburg",
+            "classroomName": "Sauna...",
+            "startAt": "2026-07-03T15:30:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "11:30:00",
+            "status": null,
+            "capacity": 35,
+            "spotsRemaining": 24,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a 75-minute self-guided journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others.\n\nDuring Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support.\n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance, curated soundscape and human connection.\n\nConsider our Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "25 Kent Ave Suite 100",
+                "Brooklyn, New York 11249",
+                "United States"
+            ],
+            "studioPhone": "+2128714505",
+            "studioEmail": "williamsburg@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F84963%2Freserve&class=84963&date=2026-07-03"
+        },
+        {
+            "id": "80097",
+            "className": "Free Flow",
+            "classType": "Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48750",
+            "locationName": "Yorkville",
+            "classroomName": "Sauna..",
+            "startAt": "2026-07-03T16:00:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "12:00:00",
+            "status": null,
+            "capacity": 33,
+            "spotsRemaining": 26,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a 75-minute self-guided journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others.\n\nDuring Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support.\n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance, curated soundscape and human connection.\n\nConsider our Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/Toronto",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "110 Bloor St W",
+                "Toronto ON M5S 2W7",
+                "Canada"
+            ],
+            "studioPhone": "4169222547",
+            "studioEmail": "yorkville@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80097%2Freserve&class=80097&date=2026-07-03"
+        },
+        {
+            "id": "80085",
+            "className": "Guided Down: Sound Immersion - 60 min",
+            "classType": "Guided Down: Sound Immersion - 60 min",
+            "instructorName": "Arkaya Elly Ball",
+            "locationId": "48717",
+            "locationName": "Adelaide",
+            "classroomName": "Sauna*",
+            "startAt": "2026-07-03T16:00:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "12:00:00",
+            "status": null,
+            "capacity": 32,
+            "spotsRemaining": 31,
+            "durationMinutes": 60,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/22_mJYGhfj.png",
+            "description": "Dive into this sonic sweat to discover the resonance of your authentic self. When we synchronize with ourselves and others, we unlock a state of flow, enabling us to lead our most harmonious lives.\nExpect a sauna to sweat, ice bath to drop-in, towel waving, aromatherapy, breathwork, vocal toning, periods of complete darkness, sharing and sound healing instruments.",
+            "timezone": "Canada/Eastern",
+            "instructors": [
+                {
+                    "name": "Arkaya Elly Ball",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/22_mJYGhfj.png"
+                }
+            ],
+            "studioAddress": [
+                "425 Adelaide St W",
+                "Toronto Ontario M5V 3C1",
+                "Canada"
+            ],
+            "studioPhone": null,
+            "studioEmail": "info@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80085%2Freserve&class=80085&date=2026-07-03"
+        },
+        {
+            "id": "80042",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48784",
+            "locationName": "Flatiron",
+            "classroomName": "Sauna.",
+            "startAt": "2026-07-03T16:00:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "12:00:00",
+            "status": null,
+            "capacity": 25,
+            "spotsRemaining": 11,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "23 W. 20th St",
+                "New York, NY 10011",
+                "United States"
+            ],
+            "studioPhone": "2123811699",
+            "studioEmail": "flatiron@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80042%2Freserve&class=80042&date=2026-07-03"
+        },
+        {
+            "id": "80030",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48817",
+            "locationName": "Williamsburg",
+            "classroomName": "Sauna .",
+            "startAt": "2026-07-03T16:00:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "12:00:00",
+            "status": null,
+            "capacity": 25,
+            "spotsRemaining": 19,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "25 Kent Ave Suite 100",
+                "Brooklyn, New York 11249",
+                "United States"
+            ],
+            "studioPhone": "+2128714505",
+            "studioEmail": "williamsburg@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80030%2Freserve&class=80030&date=2026-07-03"
+        },
+        {
+            "id": "80098",
+            "className": "Free Flow",
+            "classType": "Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48750",
+            "locationName": "Yorkville",
+            "classroomName": "Sauna...",
+            "startAt": "2026-07-03T16:30:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "12:30:00",
+            "status": null,
+            "capacity": 33,
+            "spotsRemaining": 32,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a 75-minute self-guided journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others.\n\nDuring Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support.\n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance, curated soundscape and human connection.\n\nConsider our Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/Toronto",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "110 Bloor St W",
+                "Toronto ON M5S 2W7",
+                "Canada"
+            ],
+            "studioPhone": "4169222547",
+            "studioEmail": "yorkville@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80098%2Freserve&class=80098&date=2026-07-03"
+        },
+        {
+            "id": "80041",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48784",
+            "locationName": "Flatiron",
+            "classroomName": "Sauna..",
+            "startAt": "2026-07-03T16:30:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "12:30:00",
+            "status": null,
+            "capacity": 35,
+            "spotsRemaining": 34,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "23 W. 20th St",
+                "New York, NY 10011",
+                "United States"
+            ],
+            "studioPhone": "2123811699",
+            "studioEmail": "flatiron@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80041%2Freserve&class=80041&date=2026-07-03"
+        },
+        {
+            "id": "80031",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48817",
+            "locationName": "Williamsburg",
+            "classroomName": "Sauna.",
+            "startAt": "2026-07-03T16:30:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "12:30:00",
+            "status": null,
+            "capacity": 35,
+            "spotsRemaining": 35,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "25 Kent Ave Suite 100",
+                "Brooklyn, New York 11249",
+                "United States"
+            ],
+            "studioPhone": "+2128714505",
+            "studioEmail": "williamsburg@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80031%2Freserve&class=80031&date=2026-07-03"
+        },
+        {
+            "id": "80099",
+            "className": "Free Flow",
+            "classType": "Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48750",
+            "locationName": "Yorkville",
+            "classroomName": "Sauna....",
+            "startAt": "2026-07-03T17:00:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "13:00:00",
+            "status": null,
+            "capacity": 33,
+            "spotsRemaining": 31,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a 75-minute self-guided journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others.\n\nDuring Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support.\n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance, curated soundscape and human connection.\n\nConsider our Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/Toronto",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "110 Bloor St W",
+                "Toronto ON M5S 2W7",
+                "Canada"
+            ],
+            "studioPhone": "4169222547",
+            "studioEmail": "yorkville@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80099%2Freserve&class=80099&date=2026-07-03"
+        },
+        {
+            "id": "80040",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48784",
+            "locationName": "Flatiron",
+            "classroomName": "Sauna...",
+            "startAt": "2026-07-03T17:00:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "13:00:00",
+            "status": null,
+            "capacity": 40,
+            "spotsRemaining": 34,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "23 W. 20th St",
+                "New York, NY 10011",
+                "United States"
+            ],
+            "studioPhone": "2123811699",
+            "studioEmail": "flatiron@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80040%2Freserve&class=80040&date=2026-07-03"
+        },
+        {
+            "id": "80029",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48817",
+            "locationName": "Williamsburg",
+            "classroomName": "Sauna..",
+            "startAt": "2026-07-03T17:00:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "13:00:00",
+            "status": null,
+            "capacity": 40,
+            "spotsRemaining": 38,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "25 Kent Ave Suite 100",
+                "Brooklyn, New York 11249",
+                "United States"
+            ],
+            "studioPhone": "+2128714505",
+            "studioEmail": "williamsburg@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80029%2Freserve&class=80029&date=2026-07-03"
+        },
+        {
+            "id": "80100",
+            "className": "Free Flow",
+            "classType": "Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48750",
+            "locationName": "Yorkville",
+            "classroomName": "Sauna.....",
+            "startAt": "2026-07-03T17:30:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "13:30:00",
+            "status": null,
+            "capacity": 33,
+            "spotsRemaining": 31,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a 75-minute self-guided journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others.\n\nDuring Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support.\n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance, curated soundscape and human connection.\n\nConsider our Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/Toronto",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "110 Bloor St W",
+                "Toronto ON M5S 2W7",
+                "Canada"
+            ],
+            "studioPhone": "4169222547",
+            "studioEmail": "yorkville@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80100%2Freserve&class=80100&date=2026-07-03"
+        },
+        {
+            "id": "80039",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48784",
+            "locationName": "Flatiron",
+            "classroomName": "Sauna....",
+            "startAt": "2026-07-03T17:30:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "13:30:00",
+            "status": null,
+            "capacity": 30,
+            "spotsRemaining": 22,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "23 W. 20th St",
+                "New York, NY 10011",
+                "United States"
+            ],
+            "studioPhone": "2123811699",
+            "studioEmail": "flatiron@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80039%2Freserve&class=80039&date=2026-07-03"
+        },
+        {
+            "id": "80028",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48817",
+            "locationName": "Williamsburg",
+            "classroomName": "Sauna...",
+            "startAt": "2026-07-03T17:30:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "13:30:00",
+            "status": null,
+            "capacity": 30,
+            "spotsRemaining": 30,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "25 Kent Ave Suite 100",
+                "Brooklyn, New York 11249",
+                "United States"
+            ],
+            "studioPhone": "+2128714505",
+            "studioEmail": "williamsburg@othership.us",
+            "showStudioAddress": true,
+            "incentive": {
+                "label": "+$11.00 credit",
+                "value": 11,
+                "source": "booko_public_incentives"
+            },
+            "deepLink": "?_mt=%2Fclasses%2F80028%2Freserve&class=80028&date=2026-07-03"
+        },
+        {
+            "id": "80020",
+            "className": "Free Flow",
+            "classType": "Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48717",
+            "locationName": "Adelaide",
+            "classroomName": "Sauna.....",
+            "startAt": "2026-07-03T17:30:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "13:30:00",
+            "status": null,
+            "capacity": 8,
+            "spotsRemaining": 5,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a 75-minute self-guided journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others.\n\nDuring Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support.\n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance, curated soundscape and human connection.\n\nConsider our Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "Canada/Eastern",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "425 Adelaide St W",
+                "Toronto Ontario M5V 3C1",
+                "Canada"
+            ],
+            "studioPhone": null,
+            "studioEmail": "info@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80020%2Freserve&class=80020&date=2026-07-03"
+        },
+        {
+            "id": "80019",
+            "className": "Free Flow",
+            "classType": "Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48717",
+            "locationName": "Adelaide",
+            "classroomName": "Sauna..",
+            "startAt": "2026-07-03T17:45:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "13:45:00",
+            "status": null,
+            "capacity": 13,
+            "spotsRemaining": 11,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a 75-minute self-guided journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others.\n\nDuring Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support.\n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance, curated soundscape and human connection.\n\nConsider our Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "Canada/Eastern",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "425 Adelaide St W",
+                "Toronto Ontario M5V 3C1",
+                "Canada"
+            ],
+            "studioPhone": null,
+            "studioEmail": "info@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80019%2Freserve&class=80019&date=2026-07-03"
+        },
+        {
+            "id": "80105",
+            "className": "Free Flow",
+            "classType": "Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48750",
+            "locationName": "Yorkville",
+            "classroomName": "Sauna..",
+            "startAt": "2026-07-03T18:00:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "14:00:00",
+            "status": null,
+            "capacity": 33,
+            "spotsRemaining": 31,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a 75-minute self-guided journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others.\n\nDuring Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support.\n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance, curated soundscape and human connection.\n\nConsider our Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/Toronto",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "110 Bloor St W",
+                "Toronto ON M5S 2W7",
+                "Canada"
+            ],
+            "studioPhone": "4169222547",
+            "studioEmail": "yorkville@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80105%2Freserve&class=80105&date=2026-07-03"
+        },
+        {
+            "id": "80038",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48784",
+            "locationName": "Flatiron",
+            "classroomName": "Sauna.....",
+            "startAt": "2026-07-03T18:00:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "14:00:00",
+            "status": null,
+            "capacity": 35,
+            "spotsRemaining": 33,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "23 W. 20th St",
+                "New York, NY 10011",
+                "United States"
+            ],
+            "studioPhone": "2123811699",
+            "studioEmail": "flatiron@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80038%2Freserve&class=80038&date=2026-07-03"
+        },
+        {
+            "id": "80027",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48817",
+            "locationName": "Williamsburg",
+            "classroomName": "Sauna....",
+            "startAt": "2026-07-03T18:00:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "14:00:00",
+            "status": null,
+            "capacity": 35,
+            "spotsRemaining": 32,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "25 Kent Ave Suite 100",
+                "Brooklyn, New York 11249",
+                "United States"
+            ],
+            "studioPhone": "+2128714505",
+            "studioEmail": "williamsburg@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80027%2Freserve&class=80027&date=2026-07-03"
+        },
+        {
+            "id": "80018",
+            "className": "Free Flow",
+            "classType": "Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48717",
+            "locationName": "Adelaide",
+            "classroomName": "Sauna...",
+            "startAt": "2026-07-03T18:15:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "14:15:00",
+            "status": null,
+            "capacity": 13,
+            "spotsRemaining": 13,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a 75-minute self-guided journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others.\n\nDuring Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support.\n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance, curated soundscape and human connection.\n\nConsider our Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "Canada/Eastern",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "425 Adelaide St W",
+                "Toronto Ontario M5V 3C1",
+                "Canada"
+            ],
+            "studioPhone": null,
+            "studioEmail": "info@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80018%2Freserve&class=80018&date=2026-07-03"
+        },
+        {
+            "id": "80104",
+            "className": "Free Flow",
+            "classType": "Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48750",
+            "locationName": "Yorkville",
+            "classroomName": "Sauna...",
+            "startAt": "2026-07-03T18:30:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "14:30:00",
+            "status": null,
+            "capacity": 33,
+            "spotsRemaining": 32,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a 75-minute self-guided journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others.\n\nDuring Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support.\n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance, curated soundscape and human connection.\n\nConsider our Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/Toronto",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "110 Bloor St W",
+                "Toronto ON M5S 2W7",
+                "Canada"
+            ],
+            "studioPhone": "4169222547",
+            "studioEmail": "yorkville@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80104%2Freserve&class=80104&date=2026-07-03"
+        },
+        {
+            "id": "80037",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48784",
+            "locationName": "Flatiron",
+            "classroomName": "Sauna.",
+            "startAt": "2026-07-03T18:30:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "14:30:00",
+            "status": null,
+            "capacity": 40,
+            "spotsRemaining": 36,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "23 W. 20th St",
+                "New York, NY 10011",
+                "United States"
+            ],
+            "studioPhone": "2123811699",
+            "studioEmail": "flatiron@othership.us",
+            "showStudioAddress": true,
+            "incentive": {
+                "label": "+$9.00 credit",
+                "value": 9,
+                "source": "booko_public_incentives"
+            },
+            "deepLink": "?_mt=%2Fclasses%2F80037%2Freserve&class=80037&date=2026-07-03"
+        },
+        {
+            "id": "80026",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48817",
+            "locationName": "Williamsburg",
+            "classroomName": "Sauna .",
+            "startAt": "2026-07-03T18:30:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "14:30:00",
+            "status": null,
+            "capacity": 40,
+            "spotsRemaining": 38,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "25 Kent Ave Suite 100",
+                "Brooklyn, New York 11249",
+                "United States"
+            ],
+            "studioPhone": "+2128714505",
+            "studioEmail": "williamsburg@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80026%2Freserve&class=80026&date=2026-07-03"
+        },
+        {
+            "id": "80092",
+            "className": "Free Flow",
+            "classType": "Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48717",
+            "locationName": "Adelaide",
+            "classroomName": "Sauna....",
+            "startAt": "2026-07-03T18:45:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "14:45:00",
+            "status": null,
+            "capacity": 17,
+            "spotsRemaining": 17,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a 75-minute self-guided journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others.\n\nDuring Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support.\n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance, curated soundscape and human connection.\n\nConsider our Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "Canada/Eastern",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "425 Adelaide St W",
+                "Toronto Ontario M5V 3C1",
+                "Canada"
+            ],
+            "studioPhone": null,
+            "studioEmail": "info@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80092%2Freserve&class=80092&date=2026-07-03"
+        },
+        {
+            "id": "80103",
+            "className": "Free Flow",
+            "classType": "Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48750",
+            "locationName": "Yorkville",
+            "classroomName": "Sauna....",
+            "startAt": "2026-07-03T19:00:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "15:00:00",
+            "status": null,
+            "capacity": 33,
+            "spotsRemaining": 31,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a 75-minute self-guided journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others.\n\nDuring Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support.\n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance, curated soundscape and human connection.\n\nConsider our Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/Toronto",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "110 Bloor St W",
+                "Toronto ON M5S 2W7",
+                "Canada"
+            ],
+            "studioPhone": "4169222547",
+            "studioEmail": "yorkville@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80103%2Freserve&class=80103&date=2026-07-03"
+        },
+        {
+            "id": "80036",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48784",
+            "locationName": "Flatiron",
+            "classroomName": "Sauna..",
+            "startAt": "2026-07-03T19:00:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "15:00:00",
+            "status": null,
+            "capacity": 30,
+            "spotsRemaining": 28,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "23 W. 20th St",
+                "New York, NY 10011",
+                "United States"
+            ],
+            "studioPhone": "2123811699",
+            "studioEmail": "flatiron@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80036%2Freserve&class=80036&date=2026-07-03"
+        },
+        {
+            "id": "80025",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48817",
+            "locationName": "Williamsburg",
+            "classroomName": "Sauna.",
+            "startAt": "2026-07-03T19:00:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "15:00:00",
+            "status": null,
+            "capacity": 30,
+            "spotsRemaining": 20,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "25 Kent Ave Suite 100",
+                "Brooklyn, New York 11249",
+                "United States"
+            ],
+            "studioPhone": "+2128714505",
+            "studioEmail": "williamsburg@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80025%2Freserve&class=80025&date=2026-07-03"
+        },
+        {
+            "id": "80093",
+            "className": "Free Flow",
+            "classType": "Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48717",
+            "locationName": "Adelaide",
+            "classroomName": "Sauna.....",
+            "startAt": "2026-07-03T19:15:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "15:15:00",
+            "status": null,
+            "capacity": 17,
+            "spotsRemaining": 15,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a 75-minute self-guided journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others.\n\nDuring Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support.\n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance, curated soundscape and human connection.\n\nConsider our Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "Canada/Eastern",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "425 Adelaide St W",
+                "Toronto Ontario M5V 3C1",
+                "Canada"
+            ],
+            "studioPhone": null,
+            "studioEmail": "info@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80093%2Freserve&class=80093&date=2026-07-03"
+        },
+        {
+            "id": "80102",
+            "className": "Free Flow",
+            "classType": "Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48750",
+            "locationName": "Yorkville",
+            "classroomName": "Sauna..",
+            "startAt": "2026-07-03T19:30:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "15:30:00",
+            "status": null,
+            "capacity": 33,
+            "spotsRemaining": 30,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a 75-minute self-guided journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others.\n\nDuring Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support.\n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance, curated soundscape and human connection.\n\nConsider our Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/Toronto",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "110 Bloor St W",
+                "Toronto ON M5S 2W7",
+                "Canada"
+            ],
+            "studioPhone": "4169222547",
+            "studioEmail": "yorkville@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80102%2Freserve&class=80102&date=2026-07-03"
+        },
+        {
+            "id": "80035",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48784",
+            "locationName": "Flatiron",
+            "classroomName": "Sauna...",
+            "startAt": "2026-07-03T19:30:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "15:30:00",
+            "status": null,
+            "capacity": 35,
+            "spotsRemaining": 31,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "23 W. 20th St",
+                "New York, NY 10011",
+                "United States"
+            ],
+            "studioPhone": "2123811699",
+            "studioEmail": "flatiron@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80035%2Freserve&class=80035&date=2026-07-03"
+        },
+        {
+            "id": "80024",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48817",
+            "locationName": "Williamsburg",
+            "classroomName": "Sauna..",
+            "startAt": "2026-07-03T19:30:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "15:30:00",
+            "status": null,
+            "capacity": 35,
+            "spotsRemaining": 34,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "25 Kent Ave Suite 100",
+                "Brooklyn, New York 11249",
+                "United States"
+            ],
+            "studioPhone": "+2128714505",
+            "studioEmail": "williamsburg@othership.us",
+            "showStudioAddress": true,
+            "incentive": {
+                "label": "+$11.00 credit",
+                "value": 11,
+                "source": "booko_public_incentives"
+            },
+            "deepLink": "?_mt=%2Fclasses%2F80024%2Freserve&class=80024&date=2026-07-03"
+        },
+        {
+            "id": "80094",
+            "className": "Free Flow",
+            "classType": "Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48717",
+            "locationName": "Adelaide",
+            "classroomName": "Sauna",
+            "startAt": "2026-07-03T19:45:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "15:45:00",
+            "status": null,
+            "capacity": 15,
+            "spotsRemaining": 12,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a 75-minute self-guided journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others.\n\nDuring Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support.\n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance, curated soundscape and human connection.\n\nConsider our Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "Canada/Eastern",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "425 Adelaide St W",
+                "Toronto Ontario M5V 3C1",
+                "Canada"
+            ],
+            "studioPhone": null,
+            "studioEmail": "info@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80094%2Freserve&class=80094&date=2026-07-03"
+        },
+        {
+            "id": "80034",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48784",
+            "locationName": "Flatiron",
+            "classroomName": "Sauna....",
+            "startAt": "2026-07-03T20:00:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "16:00:00",
+            "status": null,
+            "capacity": 35,
+            "spotsRemaining": 33,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "23 W. 20th St",
+                "New York, NY 10011",
+                "United States"
+            ],
+            "studioPhone": "2123811699",
+            "studioEmail": "flatiron@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80034%2Freserve&class=80034&date=2026-07-03"
+        },
+        {
+            "id": "80023",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48817",
+            "locationName": "Williamsburg",
+            "classroomName": "Sauna...",
+            "startAt": "2026-07-03T20:00:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "16:00:00",
+            "status": null,
+            "capacity": 40,
+            "spotsRemaining": 38,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "25 Kent Ave Suite 100",
+                "Brooklyn, New York 11249",
+                "United States"
+            ],
+            "studioPhone": "+2128714505",
+            "studioEmail": "williamsburg@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80023%2Freserve&class=80023&date=2026-07-03"
+        },
+        {
+            "id": "80017",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48750",
+            "locationName": "Yorkville",
+            "classroomName": "Sauna...",
+            "startAt": "2026-07-03T20:00:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "16:00:00",
+            "status": null,
+            "capacity": 30,
+            "spotsRemaining": 30,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/Toronto",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "110 Bloor St W",
+                "Toronto ON M5S 2W7",
+                "Canada"
+            ],
+            "studioPhone": "4169222547",
+            "studioEmail": "yorkville@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80017%2Freserve&class=80017&date=2026-07-03"
+        },
+        {
+            "id": "80095",
+            "className": "Free Flow",
+            "classType": "Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48717",
+            "locationName": "Adelaide",
+            "classroomName": "Sauna.",
+            "startAt": "2026-07-03T20:15:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "16:15:00",
+            "status": null,
+            "capacity": 17,
+            "spotsRemaining": 16,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a 75-minute self-guided journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others.\n\nDuring Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support.\n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance, curated soundscape and human connection.\n\nConsider our Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "Canada/Eastern",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "425 Adelaide St W",
+                "Toronto Ontario M5V 3C1",
+                "Canada"
+            ],
+            "studioPhone": null,
+            "studioEmail": "info@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80095%2Freserve&class=80095&date=2026-07-03"
+        },
+        {
+            "id": "80033",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48784",
+            "locationName": "Flatiron",
+            "classroomName": "Sauna.....",
+            "startAt": "2026-07-03T20:30:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "16:30:00",
+            "status": null,
+            "capacity": 30,
+            "spotsRemaining": 27,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "23 W. 20th St",
+                "New York, NY 10011",
+                "United States"
+            ],
+            "studioPhone": "2123811699",
+            "studioEmail": "flatiron@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80033%2Freserve&class=80033&date=2026-07-03"
+        },
+        {
+            "id": "80022",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48817",
+            "locationName": "Williamsburg",
+            "classroomName": "Sauna....",
+            "startAt": "2026-07-03T20:30:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "16:30:00",
+            "status": null,
+            "capacity": 30,
+            "spotsRemaining": 28,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "25 Kent Ave Suite 100",
+                "Brooklyn, New York 11249",
+                "United States"
+            ],
+            "studioPhone": "+2128714505",
+            "studioEmail": "williamsburg@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80022%2Freserve&class=80022&date=2026-07-03"
+        },
+        {
+            "id": "80016",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48750",
+            "locationName": "Yorkville",
+            "classroomName": "Sauna....",
+            "startAt": "2026-07-03T20:30:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "16:30:00",
+            "status": null,
+            "capacity": 33,
+            "spotsRemaining": 31,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/Toronto",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "110 Bloor St W",
+                "Toronto ON M5S 2W7",
+                "Canada"
+            ],
+            "studioPhone": "4169222547",
+            "studioEmail": "yorkville@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80016%2Freserve&class=80016&date=2026-07-03"
+        },
+        {
+            "id": "80096",
+            "className": "Free Flow",
+            "classType": "Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48717",
+            "locationName": "Adelaide",
+            "classroomName": "Sauna..",
+            "startAt": "2026-07-03T20:45:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "16:45:00",
+            "status": null,
+            "capacity": 17,
+            "spotsRemaining": 16,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a 75-minute self-guided journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others.\n\nDuring Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support.\n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance, curated soundscape and human connection.\n\nConsider our Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "Canada/Eastern",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "425 Adelaide St W",
+                "Toronto Ontario M5V 3C1",
+                "Canada"
+            ],
+            "studioPhone": null,
+            "studioEmail": "info@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80096%2Freserve&class=80096&date=2026-07-03"
+        },
+        {
+            "id": "80047",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48784",
+            "locationName": "Flatiron",
+            "classroomName": "Sauna.",
+            "startAt": "2026-07-03T21:00:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "17:00:00",
+            "status": null,
+            "capacity": 35,
+            "spotsRemaining": 31,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "23 W. 20th St",
+                "New York, NY 10011",
+                "United States"
+            ],
+            "studioPhone": "2123811699",
+            "studioEmail": "flatiron@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80047%2Freserve&class=80047&date=2026-07-03"
+        },
+        {
+            "id": "80045",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48817",
+            "locationName": "Williamsburg",
+            "classroomName": "Sauna .",
+            "startAt": "2026-07-03T21:00:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "17:00:00",
+            "status": null,
+            "capacity": 35,
+            "spotsRemaining": 35,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "25 Kent Ave Suite 100",
+                "Brooklyn, New York 11249",
+                "United States"
+            ],
+            "studioPhone": "+2128714505",
+            "studioEmail": "williamsburg@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80045%2Freserve&class=80045&date=2026-07-03"
+        },
+        {
+            "id": "80044",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48750",
+            "locationName": "Yorkville",
+            "classroomName": "Sauna.....",
+            "startAt": "2026-07-03T21:00:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "17:00:00",
+            "status": null,
+            "capacity": 25,
+            "spotsRemaining": 22,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/Toronto",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "110 Bloor St W",
+                "Toronto ON M5S 2W7",
+                "Canada"
+            ],
+            "studioPhone": "4169222547",
+            "studioEmail": "yorkville@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80044%2Freserve&class=80044&date=2026-07-03"
+        },
+        {
+            "id": "80043",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48717",
+            "locationName": "Adelaide",
+            "classroomName": "Sauna...",
+            "startAt": "2026-07-03T21:15:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "17:15:00",
+            "status": null,
+            "capacity": 15,
+            "spotsRemaining": 9,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "Canada/Eastern",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "425 Adelaide St W",
+                "Toronto Ontario M5V 3C1",
+                "Canada"
+            ],
+            "studioPhone": null,
+            "studioEmail": "info@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80043%2Freserve&class=80043&date=2026-07-03"
+        },
+        {
+            "id": "80065",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48750",
+            "locationName": "Yorkville",
+            "classroomName": "Sauna..",
+            "startAt": "2026-07-03T21:30:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "17:30:00",
+            "status": null,
+            "capacity": 30,
+            "spotsRemaining": 24,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/Toronto",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "110 Bloor St W",
+                "Toronto ON M5S 2W7",
+                "Canada"
+            ],
+            "studioPhone": "4169222547",
+            "studioEmail": "yorkville@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80065%2Freserve&class=80065&date=2026-07-03"
+        },
+        {
+            "id": "80046",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48817",
+            "locationName": "Williamsburg",
+            "classroomName": "Sauna.",
+            "startAt": "2026-07-03T21:30:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "17:30:00",
+            "status": null,
+            "capacity": 40,
+            "spotsRemaining": 35,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "25 Kent Ave Suite 100",
+                "Brooklyn, New York 11249",
+                "United States"
+            ],
+            "studioPhone": "+2128714505",
+            "studioEmail": "williamsburg@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80046%2Freserve&class=80046&date=2026-07-03"
+        },
+        {
+            "id": "80032",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48784",
+            "locationName": "Flatiron",
+            "classroomName": "Sauna..",
+            "startAt": "2026-07-03T21:30:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "17:30:00",
+            "status": null,
+            "capacity": 35,
+            "spotsRemaining": 33,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "23 W. 20th St",
+                "New York, NY 10011",
+                "United States"
+            ],
+            "studioPhone": "2123811699",
+            "studioEmail": "flatiron@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80032%2Freserve&class=80032&date=2026-07-03"
+        },
+        {
+            "id": "80087",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48717",
+            "locationName": "Adelaide",
+            "classroomName": "Sauna....",
+            "startAt": "2026-07-03T21:45:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "17:45:00",
+            "status": null,
+            "capacity": 13,
+            "spotsRemaining": 8,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "Canada/Eastern",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "425 Adelaide St W",
+                "Toronto Ontario M5V 3C1",
+                "Canada"
+            ],
+            "studioPhone": null,
+            "studioEmail": "info@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80087%2Freserve&class=80087&date=2026-07-03"
+        },
+        {
+            "id": "80064",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48750",
+            "locationName": "Yorkville",
+            "classroomName": "Sauna.",
+            "startAt": "2026-07-03T22:00:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "18:00:00",
+            "status": null,
+            "capacity": 25,
+            "spotsRemaining": 21,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/Toronto",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "110 Bloor St W",
+                "Toronto ON M5S 2W7",
+                "Canada"
+            ],
+            "studioPhone": "4169222547",
+            "studioEmail": "yorkville@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80064%2Freserve&class=80064&date=2026-07-03"
+        },
+        {
+            "id": "80049",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48784",
+            "locationName": "Flatiron",
+            "classroomName": "Sauna...",
+            "startAt": "2026-07-03T22:00:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "18:00:00",
+            "status": null,
+            "capacity": 30,
+            "spotsRemaining": 24,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "23 W. 20th St",
+                "New York, NY 10011",
+                "United States"
+            ],
+            "studioPhone": "2123811699",
+            "studioEmail": "flatiron@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80049%2Freserve&class=80049&date=2026-07-03"
+        },
+        {
+            "id": "80048",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48817",
+            "locationName": "Williamsburg",
+            "classroomName": "Sauna...",
+            "startAt": "2026-07-03T22:00:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "18:00:00",
+            "status": null,
+            "capacity": 30,
+            "spotsRemaining": 30,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "25 Kent Ave Suite 100",
+                "Brooklyn, New York 11249",
+                "United States"
+            ],
+            "studioPhone": "+2128714505",
+            "studioEmail": "williamsburg@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80048%2Freserve&class=80048&date=2026-07-03"
+        },
+        {
+            "id": "80083",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48717",
+            "locationName": "Adelaide",
+            "classroomName": "Sauna.....",
+            "startAt": "2026-07-03T22:15:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "18:15:00",
+            "status": null,
+            "capacity": 13,
+            "spotsRemaining": 8,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "Canada/Eastern",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "425 Adelaide St W",
+                "Toronto Ontario M5V 3C1",
+                "Canada"
+            ],
+            "studioPhone": null,
+            "studioEmail": "info@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80083%2Freserve&class=80083&date=2026-07-03"
+        },
+        {
+            "id": "80074",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48784",
+            "locationName": "Flatiron",
+            "classroomName": "Sauna....",
+            "startAt": "2026-07-03T22:30:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "18:30:00",
+            "status": null,
+            "capacity": 20,
+            "spotsRemaining": 16,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "23 W. 20th St",
+                "New York, NY 10011",
+                "United States"
+            ],
+            "studioPhone": "2123811699",
+            "studioEmail": "flatiron@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80074%2Freserve&class=80074&date=2026-07-03"
+        },
+        {
+            "id": "80073",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48817",
+            "locationName": "Williamsburg",
+            "classroomName": "Sauna....",
+            "startAt": "2026-07-03T22:30:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "18:30:00",
+            "status": null,
+            "capacity": 20,
+            "spotsRemaining": 20,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "25 Kent Ave Suite 100",
+                "Brooklyn, New York 11249",
+                "United States"
+            ],
+            "studioPhone": "+2128714505",
+            "studioEmail": "williamsburg@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80073%2Freserve&class=80073&date=2026-07-03"
+        },
+        {
+            "id": "80063",
+            "className": "Lively Free Flow",
+            "classType": "Lively Free Flow",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48750",
+            "locationName": "Yorkville",
+            "classroomName": "Sauna...",
+            "startAt": "2026-07-03T22:30:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "18:30:00",
+            "status": null,
+            "capacity": 25,
+            "spotsRemaining": 18,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Embark on a social 75-minute journey to explore the sauna to sweat, ice baths to drop-in and a commons to be yourself with others. During Lively Free Flows you have the freedom to chart your own course through the elements, while our experienced Guides are available for those seeking one-on-one support. Expect all of the elements that make our journey a memorable one: towel waving, aromatherapy, playful sauna landings, 1:1 guidance and curated soundscape, plus palpable human connection and social energy. Consider our Lively Free Flows an opportunity to land at Othership and shift states in collective ways.",
+            "timezone": "America/Toronto",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "110 Bloor St W",
+                "Toronto ON M5S 2W7",
+                "Canada"
+            ],
+            "studioPhone": "4169222547",
+            "studioEmail": "yorkville@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80063%2Freserve&class=80063&date=2026-07-03"
+        },
+        {
+            "id": "80061",
+            "className": "Guided All Around: Reflect",
+            "classType": "Guided All Around: Reflect",
+            "instructorName": "Tiffany Lin",
+            "locationId": "48717",
+            "locationName": "Adelaide",
+            "classroomName": "Sauna*",
+            "startAt": "2026-07-03T23:30:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "19:30:00",
+            "status": null,
+            "capacity": 32,
+            "spotsRemaining": 27,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/Tiffany_Lin_Photo.png",
+            "description": "A guided journey to reflect deeply on where you are, envision clearly where you want to go, and powerfully break through what's holding you back. Experience meaningful self-reflection, vulnerable connection, and a supportive space designed for transformative breakthroughs.\nWhat to expect: Sauna sweat, ice bath, breathwork, vocal release, self-reflection, sharing, and an empowering group breakthrough moment.",
+            "timezone": "Canada/Eastern",
+            "instructors": [
+                {
+                    "name": "Tiffany Lin",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/Tiffany_Lin_Photo.png"
+                }
+            ],
+            "studioAddress": [
+                "425 Adelaide St W",
+                "Toronto Ontario M5V 3C1",
+                "Canada"
+            ],
+            "studioPhone": null,
+            "studioEmail": "info@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80061%2Freserve&class=80061&date=2026-07-03"
+        },
+        {
+            "id": "80086",
+            "className": "Guided All Around: Sound Immersion",
+            "classType": "Guided All Around: Sound Immersion",
+            "instructorName": "Sharisse Francisco",
+            "locationId": "48784",
+            "locationName": "Flatiron",
+            "classroomName": "Sauna.",
+            "startAt": "2026-07-03T23:45:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "19:45:00",
+            "status": null,
+            "capacity": 60,
+            "spotsRemaining": 55,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/sharisse.jpg",
+            "description": "Dive into this sonic sweat to discover the resonance of your authentic self. When we synchronize with ourselves and others, we unlock a state of flow, enabling us to lead our most harmonious lives.\n\nExpect a sauna to sweat, ice bath to drop-in, towel waving, aromatherapy, breathwork, vocal toning, periods of complete darkness, sharing and sound healing instruments.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Sharisse Francisco",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/sharisse.jpg"
+                }
+            ],
+            "studioAddress": [
+                "23 W. 20th St",
+                "New York, NY 10011",
+                "United States"
+            ],
+            "studioPhone": "2123811699",
+            "studioEmail": "flatiron@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80086%2Freserve&class=80086&date=2026-07-03"
+        },
+        {
+            "id": "80079",
+            "className": "Guided Down: Self-Care Sweat",
+            "classType": "Guided Down: Self-Care Sweat",
+            "instructorName": "nicole lopes",
+            "locationId": "48817",
+            "locationName": "Williamsburg",
+            "classroomName": "Sauna",
+            "startAt": "2026-07-03T23:45:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "19:45:00",
+            "status": null,
+            "capacity": 60,
+            "spotsRemaining": 53,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/nicolelopes.png",
+            "description": "Let the warmth envelop you as we indulge in this rejuvenating journey of self-care and appreciation for our bodies. Rediscover your inner radiance and naturally nurture your body through this immersive, cleansing experience. \n\nExpect a sauna to sweat, ice bath to drop-in, towel waving, aromatherapy, lymphatic drainage, Gua-sha, essential oil infused face towels, sharing and self-massage.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "nicole lopes",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/nicolelopes.png"
+                }
+            ],
+            "studioAddress": [
+                "25 Kent Ave Suite 100",
+                "Brooklyn, New York 11249",
+                "United States"
+            ],
+            "studioPhone": "+2128714505",
+            "studioEmail": "williamsburg@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80079%2Freserve&class=80079&date=2026-07-03"
+        },
+        {
+            "id": "80055",
+            "className": "Guided All Around: Rose, Thorn, Bud",
+            "classType": "Guided All Around: Rose, Thorn, Bud",
+            "instructorName": "Jessica Grossi",
+            "locationId": "48750",
+            "locationName": "Yorkville",
+            "classroomName": "Sauna*",
+            "startAt": "2026-07-03T23:45:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "19:45:00",
+            "status": null,
+            "capacity": 60,
+            "spotsRemaining": 47,
+            "durationMinutes": 75,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/jessicagrossi.png",
+            "description": "Embark on an exploratory journey designed to help you regulate yourself through introspection and self-discovery. Connect with your authentic self and navigate the diverse landscape of human emotions, thoughts, and feelings.\n\nExpect a sauna to sweat, ice bath to drop-in, towel waving, aromatherapy, breathwork, periods of complete darkness, sound healing instruments, sharing and loud vocal release.",
+            "timezone": "America/Toronto",
+            "instructors": [
+                {
+                    "name": "Jessica Grossi",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/jessicagrossi.png"
+                }
+            ],
+            "studioAddress": [
+                "110 Bloor St W",
+                "Toronto ON M5S 2W7",
+                "Canada"
+            ],
+            "studioPhone": "4169222547",
+            "studioEmail": "yorkville@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80055%2Freserve&class=80055&date=2026-07-03"
+        },
+        {
+            "id": "80068",
+            "className": "Social",
+            "classType": "Social",
+            "instructorName": "Social Guide",
+            "locationId": "48717",
+            "locationName": "Adelaide",
+            "classroomName": "Sauna",
+            "startAt": "2026-07-04T00:45:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "20:45:00",
+            "status": null,
+            "capacity": 19,
+            "spotsRemaining": 16,
+            "durationMinutes": 120,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-28_002423_FxPAbKn.jpg",
+            "description": "Consider this our icy-fresh take on an evening out with friends. A 2-hour sober-curious gathering to connect with others over a shared sauna + ice bath experience.\n\nHarness the collective energy of like-minded journeyers to drop your guard and express your most authentic self. Together, we unite to shift our state and build belonging from a place of open receptivity. \n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, louder music, dancing, impromptu sauna landings, 1:1 guidance, curated soundscape, human connection and big TGIF energy.",
+            "timezone": "Canada/Eastern",
+            "instructors": [
+                {
+                    "name": "Social Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-28_002423_FxPAbKn.jpg"
+                }
+            ],
+            "studioAddress": [
+                "425 Adelaide St W",
+                "Toronto Ontario M5V 3C1",
+                "Canada"
+            ],
+            "studioPhone": null,
+            "studioEmail": "info@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80068%2Freserve&class=80068&date=2026-07-03"
+        },
+        {
+            "id": "80084",
+            "className": "Social",
+            "classType": "Social",
+            "instructorName": "Social Guide",
+            "locationId": "48750",
+            "locationName": "Yorkville",
+            "classroomName": "Sauna..",
+            "startAt": "2026-07-04T01:00:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "21:00:00",
+            "status": null,
+            "capacity": 35,
+            "spotsRemaining": 28,
+            "durationMinutes": 120,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-28_002423_FxPAbKn.jpg",
+            "description": "Consider this our icy-fresh take on an evening out with friends. A 2-hour sober-curious gathering to connect with others over a shared sauna + ice bath experience.\n\nHarness the collective energy of like-minded journeyers to drop your guard and express your most authentic self. Together, we unite to shift our state and build belonging from a place of open receptivity. \n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, louder music, dancing, impromptu sauna landings, 1:1 guidance, curated soundscape, human connection and big TGIF energy.",
+            "timezone": "America/Toronto",
+            "instructors": [
+                {
+                    "name": "Social Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-28_002423_FxPAbKn.jpg"
+                }
+            ],
+            "studioAddress": [
+                "110 Bloor St W",
+                "Toronto ON M5S 2W7",
+                "Canada"
+            ],
+            "studioPhone": "4169222547",
+            "studioEmail": "yorkville@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80084%2Freserve&class=80084&date=2026-07-03"
+        },
+        {
+            "id": "80082",
+            "className": "Social",
+            "classType": "Social",
+            "instructorName": "Social Guide",
+            "locationId": "48717",
+            "locationName": "Adelaide",
+            "classroomName": "Sauna....",
+            "startAt": "2026-07-04T01:00:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "21:00:00",
+            "status": null,
+            "capacity": 13,
+            "spotsRemaining": 10,
+            "durationMinutes": 120,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-28_002423_FxPAbKn.jpg",
+            "description": "Consider this our icy-fresh take on an evening out with friends. A 2-hour sober-curious gathering to connect with others over a shared sauna + ice bath experience.\n\nHarness the collective energy of like-minded journeyers to drop your guard and express your most authentic self. Together, we unite to shift our state and build belonging from a place of open receptivity. \n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, louder music, dancing, impromptu sauna landings, 1:1 guidance, curated soundscape, human connection and big TGIF energy.",
+            "timezone": "Canada/Eastern",
+            "instructors": [
+                {
+                    "name": "Social Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-28_002423_FxPAbKn.jpg"
+                }
+            ],
+            "studioAddress": [
+                "425 Adelaide St W",
+                "Toronto Ontario M5V 3C1",
+                "Canada"
+            ],
+            "studioPhone": null,
+            "studioEmail": "info@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80082%2Freserve&class=80082&date=2026-07-03"
+        },
+        {
+            "id": "80077",
+            "className": "Social",
+            "classType": "Social",
+            "instructorName": "Social Guide",
+            "locationId": "48784",
+            "locationName": "Flatiron",
+            "classroomName": "Sauna.",
+            "startAt": "2026-07-04T01:00:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "21:00:00",
+            "status": null,
+            "capacity": 20,
+            "spotsRemaining": 14,
+            "durationMinutes": 120,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-28_002423_FxPAbKn.jpg",
+            "description": "Consider this our icy-fresh take on an evening out with friends. A 2-hour sober-curious gathering to connect with others over a shared sauna + ice bath experience.\n\nHarness the collective energy of like-minded journeyers to drop your guard and express your most authentic self. Together, we unite to shift our state and build belonging from a place of open receptivity. \n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, louder music, dancing, impromptu sauna landings, 1:1 guidance, curated soundscape, human connection and big TGIF energy.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Social Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-28_002423_FxPAbKn.jpg"
+                }
+            ],
+            "studioAddress": [
+                "23 W. 20th St",
+                "New York, NY 10011",
+                "United States"
+            ],
+            "studioPhone": "2123811699",
+            "studioEmail": "flatiron@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80077%2Freserve&class=80077&date=2026-07-03"
+        },
+        {
+            "id": "80072",
+            "className": "Free Flow (2 Hour)",
+            "classType": "Free Flow (2 Hour)",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48817",
+            "locationName": "Williamsburg",
+            "classroomName": "Sauna .",
+            "startAt": "2026-07-04T01:00:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "21:00:00",
+            "status": null,
+            "capacity": 20,
+            "spotsRemaining": 17,
+            "durationMinutes": 120,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Consider this our icy-fresh take on an evening out with friends. A 2-hour sober-curious gathering to connect with others over a shared sauna + ice bath experience.\n\nHarness the collective energy of like-minded journeyers to drop your guard and express your most authentic self. Together, we unite to shift our state and build belonging from a place of open receptivity. \n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, louder music, dancing, impromptu sauna landings, 1:1 guidance, curated soundscape, human connection and big TGIF energy.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "25 Kent Ave Suite 100",
+                "Brooklyn, New York 11249",
+                "United States"
+            ],
+            "studioPhone": "+2128714505",
+            "studioEmail": "williamsburg@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80072%2Freserve&class=80072&date=2026-07-03"
+        },
+        {
+            "id": "80067",
+            "className": "Social",
+            "classType": "Social",
+            "instructorName": "Social Guide",
+            "locationId": "48750",
+            "locationName": "Yorkville",
+            "classroomName": "Sauna.",
+            "startAt": "2026-07-04T01:15:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "21:15:00",
+            "status": null,
+            "capacity": 33,
+            "spotsRemaining": 32,
+            "durationMinutes": 120,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-28_002423_FxPAbKn.jpg",
+            "description": "Consider this our icy-fresh take on an evening out with friends. A 2-hour sober-curious gathering to connect with others over a shared sauna + ice bath experience.\n\nHarness the collective energy of like-minded journeyers to drop your guard and express your most authentic self. Together, we unite to shift our state and build belonging from a place of open receptivity. \n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, louder music, dancing, impromptu sauna landings, 1:1 guidance, curated soundscape, human connection and big TGIF energy.",
+            "timezone": "America/Toronto",
+            "instructors": [
+                {
+                    "name": "Social Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-28_002423_FxPAbKn.jpg"
+                }
+            ],
+            "studioAddress": [
+                "110 Bloor St W",
+                "Toronto ON M5S 2W7",
+                "Canada"
+            ],
+            "studioPhone": "4169222547",
+            "studioEmail": "yorkville@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80067%2Freserve&class=80067&date=2026-07-03"
+        },
+        {
+            "id": "80050",
+            "className": "Social",
+            "classType": "Social",
+            "instructorName": "Social Guide",
+            "locationId": "48717",
+            "locationName": "Adelaide",
+            "classroomName": "Sauna.",
+            "startAt": "2026-07-04T01:15:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "21:15:00",
+            "status": null,
+            "capacity": 19,
+            "spotsRemaining": 17,
+            "durationMinutes": 120,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-28_002423_FxPAbKn.jpg",
+            "description": "Consider this our icy-fresh take on an evening out with friends. A 2-hour sober-curious gathering to connect with others over a shared sauna + ice bath experience.\n\nHarness the collective energy of like-minded journeyers to drop your guard and express your most authentic self. Together, we unite to shift our state and build belonging from a place of open receptivity. \n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, louder music, dancing, impromptu sauna landings, 1:1 guidance, curated soundscape, human connection and big TGIF energy.",
+            "timezone": "Canada/Eastern",
+            "instructors": [
+                {
+                    "name": "Social Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-28_002423_FxPAbKn.jpg"
+                }
+            ],
+            "studioAddress": [
+                "425 Adelaide St W",
+                "Toronto Ontario M5V 3C1",
+                "Canada"
+            ],
+            "studioPhone": null,
+            "studioEmail": "info@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80050%2Freserve&class=80050&date=2026-07-03"
+        },
+        {
+            "id": "80076",
+            "className": "Social",
+            "classType": "Social",
+            "instructorName": "Social Guide",
+            "locationId": "48784",
+            "locationName": "Flatiron",
+            "classroomName": "Sauna..",
+            "startAt": "2026-07-04T01:20:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "21:20:00",
+            "status": null,
+            "capacity": 35,
+            "spotsRemaining": 34,
+            "durationMinutes": 120,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-28_002423_FxPAbKn.jpg",
+            "description": "Consider this our icy-fresh take on an evening out with friends. A 2-hour sober-curious gathering to connect with others over a shared sauna + ice bath experience.\n\nHarness the collective energy of like-minded journeyers to drop your guard and express your most authentic self. Together, we unite to shift our state and build belonging from a place of open receptivity. \n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, louder music, dancing, impromptu sauna landings, 1:1 guidance, curated soundscape, human connection and big TGIF energy.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Social Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-28_002423_FxPAbKn.jpg"
+                }
+            ],
+            "studioAddress": [
+                "23 W. 20th St",
+                "New York, NY 10011",
+                "United States"
+            ],
+            "studioPhone": "2123811699",
+            "studioEmail": "flatiron@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80076%2Freserve&class=80076&date=2026-07-03"
+        },
+        {
+            "id": "80071",
+            "className": "Free Flow (2 Hour)",
+            "classType": "Free Flow (2 Hour)",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48817",
+            "locationName": "Williamsburg",
+            "classroomName": "Sauna.",
+            "startAt": "2026-07-04T01:20:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "21:20:00",
+            "status": null,
+            "capacity": 35,
+            "spotsRemaining": 35,
+            "durationMinutes": 120,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Consider this our icy-fresh take on an evening out with friends. A 2-hour sober-curious gathering to connect with others over a shared sauna + ice bath experience.\n\nHarness the collective energy of like-minded journeyers to drop your guard and express your most authentic self. Together, we unite to shift our state and build belonging from a place of open receptivity. \n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, louder music, dancing, impromptu sauna landings, 1:1 guidance, curated soundscape, human connection and big TGIF energy.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "25 Kent Ave Suite 100",
+                "Brooklyn, New York 11249",
+                "United States"
+            ],
+            "studioPhone": "+2128714505",
+            "studioEmail": "williamsburg@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80071%2Freserve&class=80071&date=2026-07-03"
+        },
+        {
+            "id": "80066",
+            "className": "Social",
+            "classType": "Social",
+            "instructorName": "Social Guide",
+            "locationId": "48750",
+            "locationName": "Yorkville",
+            "classroomName": "Sauna...",
+            "startAt": "2026-07-04T01:30:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "21:30:00",
+            "status": null,
+            "capacity": 37,
+            "spotsRemaining": 36,
+            "durationMinutes": 120,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-28_002423_FxPAbKn.jpg",
+            "description": "Consider this our icy-fresh take on an evening out with friends. A 2-hour sober-curious gathering to connect with others over a shared sauna + ice bath experience.\n\nHarness the collective energy of like-minded journeyers to drop your guard and express your most authentic self. Together, we unite to shift our state and build belonging from a place of open receptivity. \n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, louder music, dancing, impromptu sauna landings, 1:1 guidance, curated soundscape, human connection and big TGIF energy.",
+            "timezone": "America/Toronto",
+            "instructors": [
+                {
+                    "name": "Social Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-28_002423_FxPAbKn.jpg"
+                }
+            ],
+            "studioAddress": [
+                "110 Bloor St W",
+                "Toronto ON M5S 2W7",
+                "Canada"
+            ],
+            "studioPhone": "4169222547",
+            "studioEmail": "yorkville@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80066%2Freserve&class=80066&date=2026-07-03"
+        },
+        {
+            "id": "80075",
+            "className": "Social",
+            "classType": "Social",
+            "instructorName": "Social Guide",
+            "locationId": "48784",
+            "locationName": "Flatiron",
+            "classroomName": "Sauna...",
+            "startAt": "2026-07-04T01:40:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "21:40:00",
+            "status": null,
+            "capacity": 45,
+            "spotsRemaining": 45,
+            "durationMinutes": 120,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-28_002423_FxPAbKn.jpg",
+            "description": "Consider this our icy-fresh take on an evening out with friends. A 2-hour sober-curious gathering to connect with others over a shared sauna + ice bath experience.\n\nHarness the collective energy of like-minded journeyers to drop your guard and express your most authentic self. Together, we unite to shift our state and build belonging from a place of open receptivity. \n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, louder music, dancing, impromptu sauna landings, 1:1 guidance, curated soundscape, human connection and big TGIF energy.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Social Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-28_002423_FxPAbKn.jpg"
+                }
+            ],
+            "studioAddress": [
+                "23 W. 20th St",
+                "New York, NY 10011",
+                "United States"
+            ],
+            "studioPhone": "2123811699",
+            "studioEmail": "flatiron@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80075%2Freserve&class=80075&date=2026-07-03"
+        },
+        {
+            "id": "80070",
+            "className": "Free Flow (2 Hour)",
+            "classType": "Free Flow (2 Hour)",
+            "instructorName": "Free Flow Guide",
+            "locationId": "48817",
+            "locationName": "Williamsburg",
+            "classroomName": "Sauna..",
+            "startAt": "2026-07-04T01:40:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "21:40:00",
+            "status": null,
+            "capacity": 45,
+            "spotsRemaining": 45,
+            "durationMinutes": 120,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg",
+            "description": "Consider this our icy-fresh take on an evening out with friends. A 2-hour sober-curious gathering to connect with others over a shared sauna + ice bath experience.\n\nHarness the collective energy of like-minded journeyers to drop your guard and express your most authentic self. Together, we unite to shift our state and build belonging from a place of open receptivity. \n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, louder music, dancing, impromptu sauna landings, 1:1 guidance, curated soundscape, human connection and big TGIF energy.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Free Flow Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-27_133737_JrEGv65.jpg"
+                }
+            ],
+            "studioAddress": [
+                "25 Kent Ave Suite 100",
+                "Brooklyn, New York 11249",
+                "United States"
+            ],
+            "studioPhone": "+2128714505",
+            "studioEmail": "williamsburg@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80070%2Freserve&class=80070&date=2026-07-03"
+        },
+        {
+            "id": "80101",
+            "className": "Social",
+            "classType": "Social",
+            "instructorName": "Social Guide",
+            "locationId": "48784",
+            "locationName": "Flatiron",
+            "classroomName": "Sauna....",
+            "startAt": "2026-07-04T02:00:00Z",
+            "localDate": "2026-07-03",
+            "localTime": "22:00:00",
+            "status": null,
+            "capacity": 30,
+            "spotsRemaining": 30,
+            "durationMinutes": 120,
+            "imageUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-28_002423_FxPAbKn.jpg",
+            "description": "Consider this our icy-fresh take on an evening out with friends. A 2-hour sober-curious gathering to connect with others over a shared sauna + ice bath experience.\n\nHarness the collective energy of like-minded journeyers to drop your guard and express your most authentic self. Together, we unite to shift our state and build belonging from a place of open receptivity. \n\nExpect all of the elements that make our journey a memorable one: towel waving, aromatherapy, louder music, dancing, impromptu sauna landings, 1:1 guidance, curated soundscape, human connection and big TGIF energy.",
+            "timezone": "America/New_York",
+            "instructors": [
+                {
+                    "name": "Social Guide",
+                    "photoUrl": "https://mtproduction-files.s3.amazonaws.com/media/public_images/IMAGE_2022-01-28_002423_FxPAbKn.jpg"
+                }
+            ],
+            "studioAddress": [
+                "23 W. 20th St",
+                "New York, NY 10011",
+                "United States"
+            ],
+            "studioPhone": "2123811699",
+            "studioEmail": "flatiron@othership.us",
+            "showStudioAddress": true,
+            "incentive": null,
+            "deepLink": "?_mt=%2Fclasses%2F80101%2Freserve&class=80101&date=2026-07-03"
+        }
+    ],
+    "meta": {
+        "mtCount": 88,
+        "mtRowsFetched": 88,
+        "mtRowsInWindow": 88,
+        "mtPagesFetched": 1,
+        "mtEndpoint": "/api/customer/v1/classes",
+        "bookoIncentivesStatus": "joined via public incentives",
+        "classesWithRealIncentives": 12,
+        "corsDecision": "proxied: browser-direct MarianaTek customer API calls are blocked by CORS",
+        "generatedAt": "2026-07-02T20:11:23.681Z",
+        "overlayEnabled": true,
+        "monthlyCreditCap": 33,
+        "hideBookoBranding": true,
+        "badgeConfig": null
+    }
+}

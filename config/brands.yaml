@@ -1,0 +1,41 @@
+# Per-brand scrape configuration. Values here were discovered in Phase 1 recon
+# (see RECON.md). All keys/tokens in this file are PUBLIC client-side values
+# served openly in each brand's own web pages — no secrets live here.
+
+defaults:
+  horizon_days: 14   # how far ahead each run snapshots
+
+brands:
+  bathhouse:
+    platform: trybe
+    # org UUID the widget passes as site_id (shared by all 3 locations)
+    site_id: 9b5df0bd-ad8d-48ce-8714-0ae9967406e9
+    locations:
+      - name: Flatiron
+        subdomain: bathhouseflatiron
+      - name: Williamsburg
+        subdomain: bathhousewilliamsburg
+      - name: Atlantic Ave
+        subdomain: bathhouseatlanticave
+
+  othership:
+    platform: mariana_tek
+    subdomain: othership          # -> https://othership.marianatek.com
+    region_id: "48575"            # NYC (Flatiron 48784, Williamsburg 48817)
+    # Booko widget API enrichment: exposes per-session credit "incentive"
+    # (a demand-tier signal; NOT the surge dollar price — see RECON.md §2).
+    booko:
+      enabled: true
+      api_base: https://bookoapp.com
+      org: othership
+      # public widget key served in the othership.us/schedule page HTML
+      api_key: bk_live_f2cfe64a2e57c0c3dc6127c222bc4f28b0f734c910a90112
+
+  lore:
+    platform: arketa
+    slug: lorebathingclub
+    # Arketa serves schedule data from an unauthenticated REST widget API
+    # (app.arketa.co/api/widget/*) — no token or auth of any kind needed.
+    # partner_id resolved live from the slug on 2026-07-02; keeping it here
+    # saves one lookup request per run (scraper re-resolves if removed).
+    partner_id: 8SxAk4JNDoPTK6j81zrxghwzkz22

@@ -1,0 +1,63 @@
+{
+  "_meta": {
+    "note": "Lore Bathing Club schedule recon sample. No LIVE schedule JSON could be captured: the Arketa embed reads data from Firestore, and reads require an anonymous Firebase auth token that the public widget mints at page load. Obtaining that token was out of scope per recon guardrails (no account creation / login / auth bypass). Below are (a) the actual OBSERVED unauthenticated Firestore response, and (b) an INFERRED document shape reconstructed from the widget's JS bundle field references. Fields marked observed_in_code were seen as literal field paths in the minified bundle; values are illustrative placeholders.",
+    "captured_at": "2026-07-02",
+    "platform": "Arketa (Firebase project: sutra-prod; formerly 'Sutra')",
+    "studio_slug_widgetName": "lorebathingclub"
+  },
+
+  "observed_unauthenticated_firestore_response": {
+    "request": "POST https://firestore.googleapis.com/v1/projects/sutra-prod/databases/(default)/documents:runQuery?key=AIzaSyCNSSHH1yTQ492d42qWOG_V_m2uQGdQF74  (structuredQuery: users where widgetName == 'lorebathingclub')",
+    "response": [
+      {
+        "error": {
+          "code": 403,
+          "message": "Missing or insufficient permissions.",
+          "status": "PERMISSION_DENIED"
+        }
+      }
+    ]
+  },
+
+  "inferred_class_document_shape": {
+    "_source": "reconstructed from field paths in app.arketa.co static/js bundles (main.36dd9cc0 + 762.71568cc1); NOT a live response",
+    "id": "<firestore doc id> (observed: docs use idField 'id')",
+    "partnerId": "<studio user doc id / 'site id'> (observed_in_code, query key)",
+    "name": "Class name (observed_in_code: e.name)",
+    "title": "Alt display title (observed_in_code: e.title)",
+    "description": "(observed_in_code: e.description)",
+    "start_time": 1751500800,
+    "_start_time_note": "observed_in_code: e.start_time is a UNIX epoch SECONDS integer; queried with where('start_time','>=',startOfDayUnix).where('start_time','<=',endUnix)",
+    "duration": 60,
+    "_duration_note": "observed_in_code: e.duration (minutes, inferred)",
+    "timezone": "America/New_York",
+    "_timezone_note": "observed_in_code: e.timezone / e.timeZone (both appear)",
+    "instructor": "Instructor display name (observed_in_code: e.instructor)",
+    "instructor_id": "<id> (observed_in_code)",
+    "host_ids": ["<id>"],
+    "_host_ids_note": "observed_in_code: queried with where('host_ids','array-contains', id)",
+    "location": "Venue / location name (observed_in_code: e.location)",
+    "location_type": "in_person | virtual | ondemand | product (observed_in_code: e.location_type)",
+    "room": "(observed_in_code: e.room)",
+    "address": "(observed_in_code: e.address)",
+    "category": "(observed_in_code: e.category / e.categoryId)",
+    "max_capacity": 9999,
+    "_max_capacity_note": "observed_in_code: Number(service.max_capacity||9999)",
+    "price": 0,
+    "amount": 0,
+    "_price_note": "observed_in_code: e.price / e.amount; service.price, service.minimum_price, service.rates[] also present",
+    "recurringClassId": "<id> (observed_in_code)",
+    "canceled": false,
+    "deleted": false,
+    "hidden": false,
+    "_flags_note": "observed_in_code: widget filters where('canceled','==',false).where('deleted','==',false).where('hidden','==',false)"
+  },
+
+  "inferred_derived_fields_client_side": {
+    "_source": "computed in bundle, not stored fields",
+    "spotsLeft": "integer (inferred = max_capacity - bookedCount)",
+    "spotsLeftText": "display string",
+    "isFull": "boolean (observed_in_code)",
+    "waitlist": "join via POST app/checkout/waitlist {classId} (observed_in_code); appointment waitlist via POST /{id}/appointments/waitlist"
+  }
+}
