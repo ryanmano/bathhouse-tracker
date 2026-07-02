@@ -27,7 +27,11 @@ def fetch_rows(brand: str | None, since: str | None, include_raw: bool) -> list[
     url = os.environ.get("SUPABASE_URL")
     key = os.environ.get("SUPABASE_SERVICE_KEY")
     if not url or not key:
-        raise SystemExit("SUPABASE_URL and SUPABASE_SERVICE_KEY must be set (see .env.example)")
+        # No Supabase configured -> export from the local SQLite store instead.
+        import local_store
+
+        print(f"no Supabase env set — exporting from {local_store.DB_PATH}")
+        return local_store.query(brand=brand, since=since, include_raw=include_raw)
     select = ",".join(COLUMNS + (["raw"] if include_raw else []))
     params: dict[str, str] = {"select": select, "order": "observed_at.asc,brand.asc"}
     if brand:

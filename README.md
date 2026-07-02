@@ -21,7 +21,39 @@ Every run (hourly via GitHub Actions, or manual):
 
 ~10 HTTP requests per run total, honest User-Agent, retries with backoff.
 
-## Setup
+## Local mode (no accounts) — CURRENTLY ACTIVE
+
+No GitHub or Supabase needed. A macOS launchd job
+(`~/Library/LaunchAgents/com.tenancy.bathhouse-tracker.plist`) runs
+`python3 run.py --local` at the top of every hour while the Mac is awake
+(missed hours are skipped; one catch-up run fires on wake). Data lands in
+`~/BathhouseData/`:
+
+- `snapshots.db` — append-only SQLite database (all history)
+- `daily/bathhouse-tracker-YYYY-MM-DD.csv` — one spreadsheet per day,
+  refreshed every run; opens directly in Excel / Google Sheets
+- `logs/run.log` — run output
+
+To keep disk use small (~7MB/day), the raw JSON blob is stored only when a
+session's price/spots/capacity/waitlist state changed since its previous
+observation; normalized columns are stored on every row. `run.py` also strips
+bulky presentation fields (descriptions, images, addresses) from raw before
+storage in both modes.
+
+Handy commands:
+
+```bash
+python3 export_to_csv.py --out everything.csv    # full history -> one CSV
+launchctl kickstart gui/$(id -u)/com.tenancy.bathhouse-tracker   # run now
+launchctl bootout   gui/$(id -u)/com.tenancy.bathhouse-tracker   # stop the schedule
+sqlite3 ~/BathhouseData/snapshots.db "select count(*) from snapshots"
+```
+
+The SQL queries below work on the SQLite db too (open with `sqlite3` or any
+GUI like DB Browser). To upgrade to 24/7 cloud capture later, follow the
+Supabase/GitHub setup below — nothing about local mode conflicts with it.
+
+## Cloud setup (optional upgrade: Supabase + GitHub Actions)
 
 1. **Supabase**: create a (free-tier) project, then run `db/schema.sql` in the
    SQL editor to create the `snapshots` table and indexes.

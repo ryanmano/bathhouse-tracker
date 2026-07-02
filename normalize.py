@@ -90,6 +90,23 @@ def make_record(
     }
 
 
+# Bulky presentation-only keys stripped from the stored raw JSON — they are
+# re-fetchable and never needed for fill/price analysis.
+BULKY_RAW_KEYS = {
+    "description", "image", "images", "imageUrl", "photo_urls", "class_image",
+    "formatted_address", "studioAddress", "layout",
+}
+
+
+def slim_raw(obj: Any) -> Any:
+    """Recursively drop bulky presentation keys from a raw platform object."""
+    if isinstance(obj, dict):
+        return {k: slim_raw(v) for k, v in obj.items() if k not in BULKY_RAW_KEYS}
+    if isinstance(obj, list):
+        return [slim_raw(v) for v in obj]
+    return obj
+
+
 def new_client(**kwargs: Any) -> httpx.Client:
     return httpx.Client(
         headers={"User-Agent": USER_AGENT, "Accept": "application/json"},

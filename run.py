@@ -104,6 +104,12 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dry-run", action="store_true", help="print samples, write nothing")
     parser.add_argument("--brands", help="comma-separated subset of brands to run")
+    parser.add_argument(
+        "--local",
+        action="store_true",
+        help="store to the local SQLite db + daily CSV in ~/BathhouseData "
+        "(this is also the automatic fallback when SUPABASE_URL is not set)",
+    )
     args = parser.parse_args()
 
     logging.basicConfig(
@@ -129,6 +135,7 @@ def main() -> int:
             records = scrape_brand(brand, cfg)
             for rec in records:
                 rec["observed_at"] = observed_at
+                rec["raw"] = normalize.slim_raw(rec["raw"])
             counts[brand] = len(records)
             all_records.extend(records)
             log.info("%s: %d sessions", brand, len(records))
@@ -139,14 +146,23 @@ def main() -> int:
             errors[brand] = f"{type(exc).__name__}: {exc}"
             log.error("%s: FAILED — %s", brand, errors[brand])
 
+    use_local = args.local or not os.environ.get("SUPABASE_URL")
+    mode = "dry-run, nothing written"
     if not args.dry_run and all_records:
-        insert_supabase(all_records)
+        if use_local:
+            import local_store
+
+            new_rows, _ = local_store.insert(all_records)
+            csv_path = local_store.export_daily_csv(observed_at[:10])
+            mode = f"{new_rows} new rows -> {local_store.DB_PATH}; spreadsheet: {csv_path}"
+        else:
+            insert_supabase(all_records)
+            mode = f"{len(all_records)} records written to Supabase"
 
     print(f"\n=== run summary ({observed_at}) ===")
     for brand in configs:
         status = f"{counts[brand]} sessions" if brand in counts else f"ERROR — {errors[brand]}"
         print(f"  {brand:10s} {status}")
-    mode = "dry-run, nothing written" if args.dry_run else f"{len(all_records)} records written"
     print(f"  total      {len(all_records)} records ({mode})")
 
     # partial success is OK (exit 0); all-brands failure is a real failure
