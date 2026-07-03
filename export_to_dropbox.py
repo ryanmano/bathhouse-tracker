@@ -2,14 +2,14 @@
 """Publish spreadsheets to a shared Dropbox folder after each scrape run.
 
 Files maintained in the Dropbox app folder (share it once; everyone in the
-share gets updates automatically):
+share gets updates automatically). Styled Excel workbooks:
 
-    latest.csv                         newest snapshot of every upcoming
-                                       session — refreshed every run
-    bathhouse-tracker-YYYY-MM-DD.csv   complete hour-by-hour history for a
-                                       finished UTC day — uploaded once,
-                                       shortly after that day ends (missed
-                                       days are backfilled automatically)
+    latest.xlsx                         newest snapshot of every upcoming
+                                        session — refreshed every run
+    bathhouse-tracker-YYYY-MM-DD.xlsx   complete hour-by-hour history for a
+                                        finished UTC day — uploaded once,
+                                        shortly after that day ends (missed
+                                        days are backfilled automatically)
 
 Requires env: SUPABASE_URL, SUPABASE_SERVICE_KEY, DROPBOX_APP_KEY,
 DROPBOX_APP_SECRET, DROPBOX_REFRESH_TOKEN. Exits 0 with a notice when the
@@ -17,8 +17,6 @@ Dropbox secrets are not configured, so the workflow works before setup.
 """
 from __future__ import annotations
 
-import csv
-import io
 import json
 import os
 import sys
@@ -72,14 +70,8 @@ def latest_observed_at(client) -> str | None:
     return page[0]["observed_at"] if page else None
 
 
-def csv_bytes(rows: list[dict]) -> bytes:
-    buf = io.StringIO()
-    writer = csv.DictWriter(
-        buf, fieldnames=sheet_format.SIMPLE_COLUMNS, extrasaction="ignore"
-    )
-    writer.writeheader()
-    writer.writerows(sheet_format.simple_rows(rows))
-    return buf.getvalue().encode()
+def sheet_bytes(rows: list[dict]) -> bytes:
+    return sheet_format.xlsx_bytes(rows)
 
 
 def dropbox_access_token(client) -> str:
@@ -132,19 +124,19 @@ def main() -> int:
     with normalize.new_client() as client:
         token = dropbox_access_token(client)
 
-        # 1) latest.csv — one row per session from the most recent snapshot.
+        # 1) latest.xlsx — one row per session from the most recent snapshot.
         newest = latest_observed_at(client)
         if newest:
             rows = sb_rows(client, [("observed_at", f"eq.{newest}")])
-            dropbox_upload(client, token, "/latest.csv", csv_bytes(rows))
+            dropbox_upload(client, token, "/latest.xlsx", sheet_bytes(rows))
         else:
-            print("no snapshots in database yet; skipping latest.csv")
+            print("no snapshots in database yet; skipping latest.xlsx")
 
         # 2) One permanent file per completed UTC day (backfill missed days).
         today = datetime.now(timezone.utc).date()
         for delta in range(1, BACKFILL_DAYS + 1):
             day = today - timedelta(days=delta)
-            path = f"/bathhouse-tracker-{day.isoformat()}.csv"
+            path = f"/bathhouse-tracker-{day.isoformat()}.xlsx"
             if dropbox_exists(client, token, path):
                 continue
             day_rows = sb_rows(
@@ -156,7 +148,7 @@ def main() -> int:
             )
             if not day_rows:
                 continue  # day predates data collection
-            dropbox_upload(client, token, path, csv_bytes(day_rows))
+            dropbox_upload(client, token, path, sheet_bytes(day_rows))
     return 0
 
 

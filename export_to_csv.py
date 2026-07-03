@@ -81,6 +81,13 @@ def main() -> int:
         print("no rows matched")
         return 0
 
+    if args.out.endswith(".xlsx"):
+        if args.full or args.include_raw:
+            raise SystemExit("--full/--include-raw exports are CSV only; use a .csv --out")
+        Path(args.out).write_bytes(sheet_format.xlsx_bytes(rows))
+        print(f"wrote {len(rows)} rows -> {args.out}")
+        return 0
+
     if args.full or args.include_raw:
         fieldnames = COLUMNS + (["raw"] if args.include_raw else [])
     else:

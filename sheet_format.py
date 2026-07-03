@@ -13,11 +13,22 @@ from zoneinfo import ZoneInfo
 EASTERN = ZoneInfo("America/New_York")
 
 # Columns actually written to the simple sheets. simple_row() computes a few
-# extras (capacity, notes) that stay available if these are ever re-added.
+# extras (notes) that stay available if ever re-added.
 SIMPLE_COLUMNS = [
     "brand", "location", "class", "date", "time",
-    "price", "spots_left", "observed",
+    "price", "spots_left", "capacity", "observed",
 ]
+
+HEADERS = {
+    "brand": "Brand", "location": "Location", "class": "Class", "date": "Date",
+    "time": "Time", "price": "Price", "spots_left": "Spots Left",
+    "capacity": "Total Spots", "notes": "Notes", "observed": "Observed",
+}
+
+COLUMN_WIDTHS = {
+    "brand": 11, "location": 16, "class": 40, "date": 12, "time": 15,
+    "price": 9, "spots_left": 11, "capacity": 11, "observed": 15,
+}
 
 # Extra PostgREST select expressions that pull end-time ingredients out of the
 # stored raw json (missing fields simply come back null).
@@ -110,3 +121,37 @@ def simple_rows(rows: list[dict]) -> list[dict]:
         ),
     )
     return [simple_row(r) for r in ordered]
+
+
+def xlsx_bytes(rows: list[dict]) -> bytes:
+    """Styled Excel workbook: bold banded header, frozen top row, filters."""
+    import io
+
+    from openpyxl import Workbook
+    from openpyxl.styles import Alignment, Font, PatternFill
+    from openpyxl.utils import get_column_letter
+
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "Sessions"
+
+    ws.append([HEADERS[c] for c in SIMPLE_COLUMNS])
+    header_font = Font(bold=True, color="FFFFFF", size=12)
+    header_fill = PatternFill("solid", fgColor="1F3A5F")
+    for cell in ws[1]:
+        cell.font = header_font
+        cell.fill = header_fill
+        cell.alignment = Alignment(horizontal="center", vertical="center")
+    ws.row_dimensions[1].height = 22
+
+    for rec in simple_rows(rows):
+        ws.append([rec.get(c) for c in SIMPLE_COLUMNS])
+
+    for i, col in enumerate(SIMPLE_COLUMNS, start=1):
+        ws.column_dimensions[get_column_letter(i)].width = COLUMN_WIDTHS.get(col, 12)
+    ws.freeze_panes = "A2"
+    ws.auto_filter.ref = ws.dimensions
+
+    buf = io.BytesIO()
+    wb.save(buf)
+    return buf.getvalue()
