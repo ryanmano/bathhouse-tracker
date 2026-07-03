@@ -26,6 +26,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import normalize
+import sheet_format
 from run import load_dotenv
 
 COLUMNS = [c for c in normalize.SCHEMA_FIELDS if c != "raw"]
@@ -41,7 +42,10 @@ def _sb_headers() -> dict:
 def sb_rows(client, filters: list[tuple[str, str]]) -> list[dict]:
     """Fetch snapshot rows from Supabase with pagination."""
     url = os.environ["SUPABASE_URL"].rstrip("/") + "/rest/v1/snapshots"
-    base = [("select", ",".join(COLUMNS)), ("order", "observed_at.asc,brand.asc")]
+    base = [
+        ("select", ",".join(COLUMNS + sheet_format.EXTRA_SELECTS)),
+        ("order", "observed_at.asc,brand.asc"),
+    ]
     rows: list[dict] = []
     offset = 0
     while True:
@@ -70,9 +74,11 @@ def latest_observed_at(client) -> str | None:
 
 def csv_bytes(rows: list[dict]) -> bytes:
     buf = io.StringIO()
-    writer = csv.DictWriter(buf, fieldnames=COLUMNS, extrasaction="ignore")
+    writer = csv.DictWriter(
+        buf, fieldnames=sheet_format.SIMPLE_COLUMNS, extrasaction="ignore"
+    )
     writer.writeheader()
-    writer.writerows(rows)
+    writer.writerows(sheet_format.simple_rows(rows))
     return buf.getvalue().encode()
 
 
