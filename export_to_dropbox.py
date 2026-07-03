@@ -1,0 +1,158 @@
+#!/usr/bin/env python3
+"""Publish spreadsheets to a shared Dropbox folder after each scrape run.
+
+Files maintained in the Dropbox app folder (share it once; everyone in the
+share gets updates automatically):
+
+    latest.csv                         newest snapshot of every upcoming
+                                       session — refreshed every run
+    bathhouse-tracker-YYYY-MM-DD.csv   complete hour-by-hour history for a
+                                       finished UTC day — uploaded once,
+                                       shortly after that day ends (missed
+                                       days are backfilled automatically)
+
+Requires env: SUPABASE_URL, SUPABASE_SERVICE_KEY, DROPBOX_APP_KEY,
+DROPBOX_APP_SECRET, DROPBOX_REFRESH_TOKEN. Exits 0 with a notice when the
+Dropbox secrets are not configured, so the workflow works before setup.
+"""
+from __future__ import annotations
+
+import csv
+import io
+import json
+import os
+import sys
+from datetime import datetime, timedelta, timezone
+from pathlib import Path
+
+import normalize
+from run import load_dotenv
+
+COLUMNS = [c for c in normalize.SCHEMA_FIELDS if c != "raw"]
+PAGE = 1000
+BACKFILL_DAYS = 7  # how far back to check for missing daily files
+
+
+def _sb_headers() -> dict:
+    key = os.environ["SUPABASE_SERVICE_KEY"]
+    return {"apikey": key, "Authorization": f"Bearer {key}"}
+
+
+def sb_rows(client, filters: list[tuple[str, str]]) -> list[dict]:
+    """Fetch snapshot rows from Supabase with pagination."""
+    url = os.environ["SUPABASE_URL"].rstrip("/") + "/rest/v1/snapshots"
+    base = [("select", ",".join(COLUMNS)), ("order", "observed_at.asc,brand.asc")]
+    rows: list[dict] = []
+    offset = 0
+    while True:
+        page = normalize.get_json(
+            client,
+            url,
+            params=base + filters + [("limit", str(PAGE)), ("offset", str(offset))],
+            headers=_sb_headers(),
+        )
+        rows.extend(page)
+        if len(page) < PAGE:
+            return rows
+        offset += PAGE
+
+
+def latest_observed_at(client) -> str | None:
+    url = os.environ["SUPABASE_URL"].rstrip("/") + "/rest/v1/snapshots"
+    page = normalize.get_json(
+        client,
+        url,
+        params=[("select", "observed_at"), ("order", "observed_at.desc"), ("limit", "1")],
+        headers=_sb_headers(),
+    )
+    return page[0]["observed_at"] if page else None
+
+
+def csv_bytes(rows: list[dict]) -> bytes:
+    buf = io.StringIO()
+    writer = csv.DictWriter(buf, fieldnames=COLUMNS, extrasaction="ignore")
+    writer.writeheader()
+    writer.writerows(rows)
+    return buf.getvalue().encode()
+
+
+def dropbox_access_token(client) -> str:
+    resp = client.post(
+        "https://api.dropbox.com/oauth2/token",
+        data={
+            "grant_type": "refresh_token",
+            "refresh_token": os.environ["DROPBOX_REFRESH_TOKEN"],
+        },
+        auth=(os.environ["DROPBOX_APP_KEY"], os.environ["DROPBOX_APP_SECRET"]),
+    )
+    resp.raise_for_status()
+    return resp.json()["access_token"]
+
+
+def dropbox_exists(client, token: str, path: str) -> bool:
+    resp = client.post(
+        "https://api.dropboxapi.com/2/files/get_metadata",
+        headers={"Authorization": f"Bearer {token}"},
+        json={"path": path},
+    )
+    return resp.status_code == 200
+
+
+def dropbox_upload(client, token: str, path: str, data: bytes) -> None:
+    resp = client.post(
+        "https://content.dropboxapi.com/2/files/upload",
+        headers={
+            "Authorization": f"Bearer {token}",
+            "Dropbox-API-Arg": json.dumps({"path": path, "mode": "overwrite", "mute": True}),
+            "Content-Type": "application/octet-stream",
+        },
+        content=data,
+    )
+    resp.raise_for_status()
+    print(f"uploaded {path} ({len(data):,} bytes)")
+
+
+def main() -> int:
+    load_dotenv(Path(__file__).resolve().parent / ".env")
+    missing = [
+        k
+        for k in ("DROPBOX_APP_KEY", "DROPBOX_APP_SECRET", "DROPBOX_REFRESH_TOKEN")
+        if not os.environ.get(k)
+    ]
+    if missing:
+        print(f"dropbox not configured ({', '.join(missing)} unset) — skipping publish")
+        return 0
+
+    with normalize.new_client() as client:
+        token = dropbox_access_token(client)
+
+        # 1) latest.csv — one row per session from the most recent snapshot.
+        newest = latest_observed_at(client)
+        if newest:
+            rows = sb_rows(client, [("observed_at", f"eq.{newest}")])
+            dropbox_upload(client, token, "/latest.csv", csv_bytes(rows))
+        else:
+            print("no snapshots in database yet; skipping latest.csv")
+
+        # 2) One permanent file per completed UTC day (backfill missed days).
+        today = datetime.now(timezone.utc).date()
+        for delta in range(1, BACKFILL_DAYS + 1):
+            day = today - timedelta(days=delta)
+            path = f"/bathhouse-tracker-{day.isoformat()}.csv"
+            if dropbox_exists(client, token, path):
+                continue
+            day_rows = sb_rows(
+                client,
+                [
+                    ("observed_at", f"gte.{day.isoformat()}"),
+                    ("observed_at", f"lt.{(day + timedelta(days=1)).isoformat()}"),
+                ],
+            )
+            if not day_rows:
+                continue  # day predates data collection
+            dropbox_upload(client, token, path, csv_bytes(day_rows))
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
