@@ -3,13 +3,10 @@ name: prestart-sweep
 # Lightweight pre-start check: every 5 minutes during venue operating hours
 # (5am-11:55pm ET), snapshot only the sessions starting in the next few
 # minutes — captures the final booking rush right before class begins.
-# STANDBY: the 5-minute schedule below is commented out until the repo is
-# made public (private-repo free minutes can't cover it — see README).
-# To activate: uncomment the `schedule:` block and make the repo public.
 on:
-  # schedule:
-  #   - cron: "*/5 9-23 * * *"  # 5:00am-7:55pm ET (EDT)
-  #   - cron: "*/5 0-3 * * *"   # 8:00pm-11:55pm ET (EDT)
+  schedule:
+    - cron: "*/5 9-23 * * *"  # 5:00am-7:55pm ET (EDT)
+    - cron: "*/5 0-3 * * *"   # 8:00pm-11:55pm ET (EDT)
   workflow_dispatch: {}
 
 jobs:
