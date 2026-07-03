@@ -16,7 +16,7 @@ EASTERN = ZoneInfo("America/New_York")
 # extras (notes) that stay available if ever re-added.
 SIMPLE_COLUMNS = [
     "brand", "location", "class", "date", "time",
-    "price", "spots_left", "capacity", "observed",
+    "observed", "price", "spots_left", "capacity",
 ]
 
 HEADERS = {

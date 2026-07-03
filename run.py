@@ -5,6 +5,7 @@ Usage:
     python run.py --dry-run              # print sample records, write nothing
     python run.py                        # full run (needs SUPABASE_URL / SUPABASE_SERVICE_KEY)
     python run.py --brands bathhouse     # subset of brands
+    python run.py --sweep                # pre-start sweep: only sessions about to begin
 """
 from __future__ import annotations
 
@@ -15,7 +16,7 @@ import logging
 import os
 import sys
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import yaml
@@ -32,6 +33,11 @@ PLATFORM_MODULES = {
 }
 
 INSERT_BATCH_SIZE = 500
+
+# Pre-start sweep window: capture sessions starting up to this many minutes
+# from now (and a small grace behind, in case the scheduled run fired late).
+SWEEP_AHEAD_MIN = 8
+SWEEP_BEHIND_MIN = 3
 
 
 def load_dotenv(path: Path) -> None:
@@ -110,6 +116,13 @@ def main() -> int:
         help="store to the local SQLite db + daily CSV in ~/BathhouseData "
         "(this is also the automatic fallback when SUPABASE_URL is not set)",
     )
+    parser.add_argument(
+        "--sweep",
+        action="store_true",
+        help="pre-start sweep: fetch a 1-day window and keep only sessions "
+        f"starting within the next {SWEEP_AHEAD_MIN} minutes, to capture the "
+        "final fill state right before class begins",
+    )
     args = parser.parse_args()
 
     logging.basicConfig(
@@ -130,9 +143,25 @@ def main() -> int:
     counts: dict[str, int] = {}
     errors: dict[str, str] = {}
 
+    sweep_lo = sweep_hi = None
+    if args.sweep:
+        now = datetime.now(timezone.utc)
+        sweep_lo = now - timedelta(minutes=SWEEP_BEHIND_MIN)
+        sweep_hi = now + timedelta(minutes=SWEEP_AHEAD_MIN)
+
     for brand, cfg in configs.items():
+        if args.sweep:
+            # narrow fetch + skip optional enrichment: sweeps run often, keep them light
+            cfg = {**cfg, "horizon_days": 1, "booko": {"enabled": False}}
         try:
             records = scrape_brand(brand, cfg)
+            if args.sweep:
+                records = [
+                    r
+                    for r in records
+                    if r.get("start_time")
+                    and sweep_lo <= datetime.fromisoformat(r["start_time"]) <= sweep_hi
+                ]
             for rec in records:
                 rec["observed_at"] = observed_at
                 rec["raw"] = normalize.slim_raw(rec["raw"])
