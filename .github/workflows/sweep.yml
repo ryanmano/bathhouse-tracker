@@ -5,8 +5,9 @@ name: prestart-sweep
 # minutes — captures the final booking rush right before class begins.
 on:
   schedule:
-    - cron: "*/5 9-23 * * *"  # 5:00am-7:55pm ET (EDT)
-    - cron: "*/5 0-3 * * *"   # 8:00pm-11:55pm ET (EDT)
+    # offset from :00/:05 marks — GitHub sheds load on round minutes
+    - cron: "2-57/5 9-23 * * *"  # 5:00am-7:55pm ET (EDT)
+    - cron: "2-57/5 0-3 * * *"   # 8:00pm-11:55pm ET (EDT)
   workflow_dispatch: {}
 
 jobs:

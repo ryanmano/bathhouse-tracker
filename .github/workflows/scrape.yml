@@ -2,9 +2,10 @@ name: scrape
 
 on:
   schedule:
-    # Hourly. For every 30 minutes use: "0,30 * * * *"
-    # Note: GitHub cron is best-effort — runs can start several minutes late.
-    - cron: "0 * * * *"
+    # Hourly, at :23 — GitHub drops on-the-hour scheduled jobs most under load,
+    # so an odd minute fires far more reliably. Still best-effort; the external
+    # dispatch trigger (see README) is the dependable path.
+    - cron: "23 * * * *"
   workflow_dispatch: {}
 
 jobs:
