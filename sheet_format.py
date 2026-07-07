@@ -34,7 +34,7 @@ HEADERS = {
 }
 
 COLUMN_WIDTHS = {
-    "brand": 13, "location": 16, "class": 44, "date": 13, "time": 15,
+    "brand": 13, "location": 16, "class": 48, "date": 13, "time": 15,
     "price": 10, "spots_left": 12, "capacity": 13, "observed": 18,
     "read_at": 18, "mins_before": 18,
 }
@@ -99,6 +99,23 @@ def _money(price) -> str:
     return f"${int(p)}" if p == int(p) else f"${p:.2f}"
 
 
+def _clean_class(name, brand) -> str:
+    """Trim class names down to the useful part.
+
+    The Brand column already says the venue, so redundant prefixes, leading
+    emoji, and trailing "- NN min" durations are stripped. Bathhouse only
+    sells the day pass, so its verbose booking label collapses to "Day Pass".
+    """
+    if not name:
+        return ""
+    s = re.sub(r"^[^\w$]+", "", str(name)).strip()  # leading emoji/symbols
+    if "Day Pass" in s:
+        return "Day Pass"
+    s = re.sub(r"^Lore Bathing Club\s*[-–]\s*", "", s)  # redundant brand prefix
+    s = re.sub(r"\s*[-–]\s*\d+\s*min\.?$", "", s, flags=re.I)  # trailing duration
+    return s.strip() or str(name).strip()
+
+
 def simple_row(row: dict) -> dict:
     start = _parse(row.get("start_time"))
     end = _parse(row.get("raw_end"))
@@ -120,7 +137,7 @@ def simple_row(row: dict) -> dict:
     return {
         "brand": (row.get("brand") or "").capitalize(),
         "location": row.get("location") or "",
-        "class": row.get("class_name") or "",
+        "class": _clean_class(row.get("class_name"), row.get("brand")),
         "date": f"{start_et.strftime('%a %b')} {start_et.day}" if start_et else "",
         "time": _time_range(start_et, end_et) if start_et else "",
         "price": _money(row.get("price")),
