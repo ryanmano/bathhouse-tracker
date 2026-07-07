@@ -4,17 +4,18 @@
 Files maintained in the Dropbox app folder (share it once; everyone in the
 share gets updates automatically). Styled Excel workbooks:
 
-    latest.xlsx                         newest snapshot of every upcoming
-                                        session — refreshed every run
-    prestart-summary.xlsx               ONE row per class = its final reading
-                                        before doors opened, with how many
-                                        minutes before start it was taken
-                                        (rolling last 30 days) — refreshed
-                                        every run
-    bathhouse-tracker-YYYY-MM-DD.xlsx   complete hour-by-hour history for a
-                                        finished UTC day — uploaded once,
-                                        shortly after that day ends (missed
-                                        days are backfilled automatically)
+    latest.xlsx                          newest snapshot of every upcoming
+                                         session — refreshed every run
+    prestart-summary-YYYY-MM-DD.xlsx     clean daily summary: ONE row per class
+                                         that day = its final reading before
+                                         doors opened + minutes-before. Grouped
+                                         by the class's date (Eastern). Today's
+                                         refreshes each run as classes start;
+                                         past days written once (backfilled).
+    bathhouse-tracker-YYYY-MM-DD.xlsx    complete hour-by-hour history for a
+                                         finished UTC day — uploaded once,
+                                         shortly after that day ends (missed
+                                         days are backfilled automatically)
 
 Requires env: SUPABASE_URL, SUPABASE_SERVICE_KEY, DROPBOX_APP_KEY,
 DROPBOX_APP_SECRET, DROPBOX_REFRESH_TOKEN. Exits 0 with a notice when the
@@ -22,15 +23,19 @@ Dropbox secrets are not configured, so the workflow works before setup.
 """
 from __future__ import annotations
 
+import collections
 import json
 import os
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 import normalize
 import sheet_format
 from run import load_dotenv
+
+EASTERN = ZoneInfo("America/New_York")
 
 COLUMNS = [c for c in normalize.SCHEMA_FIELDS if c != "raw"]
 PAGE = 1000
@@ -137,10 +142,11 @@ def main() -> int:
         else:
             print("no snapshots in database yet; skipping latest.xlsx")
 
-        # 1b) prestart-summary.xlsx — final pre-start reading per class,
-        #     rolling last 30 days (bounded so this stays quick every run).
+        # 1b) prestart-summary-YYYY-MM-DD.xlsx — one clean daily file, grouped
+        #     by each class's Eastern start date. Today refreshes every run;
+        #     past days are written once (backfilled up to BACKFILL_DAYS).
         now = datetime.now(timezone.utc)
-        window_start = (now - timedelta(days=30)).date().isoformat()
+        window_start = (now - timedelta(days=BACKFILL_DAYS)).date().isoformat()
         recent = sb_rows(
             client,
             [
@@ -148,8 +154,34 @@ def main() -> int:
                 ("start_time", f"lt.{now.isoformat()}"),
             ],
         )
-        summary = sheet_format.prestart_xlsx_bytes(recent)
-        dropbox_upload(client, token, "/prestart-summary.xlsx", summary)
+        by_day: dict[str, list[dict]] = collections.defaultdict(list)
+        for r in recent:
+            st = sheet_format._parse(r.get("start_time"))
+            if st is not None:
+                by_day[st.astimezone(EASTERN).date().isoformat()].append(r)
+
+        today_et = now.astimezone(EASTERN).date().isoformat()
+        for day, day_rows in sorted(by_day.items()):
+            path = f"/prestart-summary-{day}.xlsx"
+            if day != today_et and dropbox_exists(client, token, path):
+                continue  # completed days are final — write once
+            prows = sheet_format.prestart_rows(day_rows)
+            if not prows:
+                continue  # no classes have started yet today
+            data = sheet_format._write_xlsx(
+                prows, sheet_format.PRESTART_COLUMNS, "Pre-start"
+            )
+            dropbox_upload(client, token, path, data)
+
+        # Remove the previous single rolling summary if it lingers (best-effort).
+        try:
+            client.post(
+                "https://api.dropboxapi.com/2/files/delete_v2",
+                headers={"Authorization": f"Bearer {token}"},
+                json={"path": "/prestart-summary.xlsx"},
+            )
+        except Exception:
+            pass
 
         # 2) One permanent file per completed UTC day (backfill missed days).
         today = datetime.now(timezone.utc).date()
