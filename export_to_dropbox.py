@@ -40,6 +40,9 @@ EASTERN = ZoneInfo("America/New_York")
 COLUMNS = [c for c in normalize.SCHEMA_FIELDS if c != "raw"]
 PAGE = 1000
 BACKFILL_DAYS = 7  # how far back to check for missing daily files
+# Reliable 5-minute pre-start triggering began this date; earlier days had
+# off timing and were removed, so we never (re)publish files before it.
+EARLIEST_DAY = "2026-07-07"
 
 
 def _sb_headers() -> dict:
@@ -162,6 +165,8 @@ def main() -> int:
 
         today_et = now.astimezone(EASTERN).date().isoformat()
         for day, day_rows in sorted(by_day.items()):
+            if day < EARLIEST_DAY:
+                continue  # off-timing early days intentionally excluded
             path = f"/prestart-summary-{day}.xlsx"
             if day != today_et and dropbox_exists(client, token, path):
                 continue  # completed days are final — write once
@@ -187,6 +192,8 @@ def main() -> int:
         today = datetime.now(timezone.utc).date()
         for delta in range(1, BACKFILL_DAYS + 1):
             day = today - timedelta(days=delta)
+            if day.isoformat() < EARLIEST_DAY:
+                continue  # off-timing early days intentionally excluded
             path = f"/bathhouse-tracker-{day.isoformat()}.xlsx"
             if dropbox_exists(client, token, path):
                 continue

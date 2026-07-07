@@ -34,9 +34,15 @@ HEADERS = {
 }
 
 COLUMN_WIDTHS = {
-    "brand": 11, "location": 16, "class": 40, "date": 12, "time": 15,
-    "price": 9, "spots_left": 11, "capacity": 11, "observed": 15,
-    "read_at": 16, "mins_before": 17,
+    "brand": 13, "location": 16, "class": 44, "date": 13, "time": 15,
+    "price": 10, "spots_left": 12, "capacity": 13, "observed": 18,
+    "read_at": 18, "mins_before": 18,
+}
+
+# Short columns look best centered; the wide text columns stay left-aligned.
+CENTERED_COLUMNS = {
+    "date", "time", "price", "spots_left", "capacity",
+    "observed", "read_at", "mins_before",
 }
 
 # Extra PostgREST select expressions that pull end-time ingredients out of the
@@ -193,8 +199,14 @@ def _write_xlsx(rows: list[dict], columns: list[str], title: str) -> bytes:
     for rec in rows:
         ws.append([rec.get(c) for c in columns])
 
+    left = Alignment(horizontal="left", vertical="center")
+    center = Alignment(horizontal="center", vertical="center")
     for i, col in enumerate(columns, start=1):
-        ws.column_dimensions[get_column_letter(i)].width = COLUMN_WIDTHS.get(col, 12)
+        letter = get_column_letter(i)
+        ws.column_dimensions[letter].width = COLUMN_WIDTHS.get(col, 12)
+        align = center if col in CENTERED_COLUMNS else left
+        for cell in ws[letter][1:]:  # data rows only; header keeps its styling
+            cell.alignment = align
     ws.freeze_panes = "A2"
     ws.auto_filter.ref = ws.dimensions
 
