@@ -40,6 +40,9 @@ EASTERN = ZoneInfo("America/New_York")
 COLUMNS = [c for c in normalize.SCHEMA_FIELDS if c != "raw"]
 PAGE = 1000
 BACKFILL_DAYS = 7  # how far back to check for missing daily files
+# Dropbox refuses to share an app folder's ROOT, but a subfolder can be shared.
+# Everything is published under here so the whole set is shareable via one link.
+SHARE_DIR = "/Bathhouse Tracker"
 # Reliable 5-minute pre-start triggering began this date; earlier days had
 # off timing and were removed, so we never (re)publish files before it.
 EARLIEST_DAY = "2026-07-07"
@@ -141,7 +144,7 @@ def main() -> int:
         newest = latest_observed_at(client)
         if newest:
             rows = sb_rows(client, [("observed_at", f"eq.{newest}")])
-            dropbox_upload(client, token, "/latest.xlsx", sheet_bytes(rows))
+            dropbox_upload(client, token, f"{SHARE_DIR}/latest.xlsx", sheet_bytes(rows))
         else:
             print("no snapshots in database yet; skipping latest.xlsx")
 
@@ -167,7 +170,7 @@ def main() -> int:
         for day, day_rows in sorted(by_day.items()):
             if day < EARLIEST_DAY:
                 continue  # off-timing early days intentionally excluded
-            path = f"/prestart-summary-{day}.xlsx"
+            path = f"{SHARE_DIR}/prestart-summary-{day}.xlsx"
             if day != today_et and dropbox_exists(client, token, path):
                 continue  # completed days are final — write once
             prows = sheet_format.prestart_rows(day_rows)
@@ -194,7 +197,7 @@ def main() -> int:
             day = today - timedelta(days=delta)
             if day.isoformat() < EARLIEST_DAY:
                 continue  # off-timing early days intentionally excluded
-            path = f"/bathhouse-tracker-{day.isoformat()}.xlsx"
+            path = f"{SHARE_DIR}/bathhouse-tracker-{day.isoformat()}.xlsx"
             if dropbox_exists(client, token, path):
                 continue
             day_rows = sb_rows(
