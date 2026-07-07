@@ -72,6 +72,11 @@ def main() -> int:
     parser.add_argument(
         "--full", action="store_true", help="machine-friendly schema columns (UTC)"
     )
+    parser.add_argument(
+        "--prestart",
+        action="store_true",
+        help="clean summary: one row per class = its final pre-start reading",
+    )
     parser.add_argument("--include-raw", action="store_true", help="include raw JSON column")
     args = parser.parse_args()
 
@@ -84,11 +89,19 @@ def main() -> int:
     if args.out.endswith(".xlsx"):
         if args.full or args.include_raw:
             raise SystemExit("--full/--include-raw exports are CSV only; use a .csv --out")
-        Path(args.out).write_bytes(sheet_format.xlsx_bytes(rows))
-        print(f"wrote {len(rows)} rows -> {args.out}")
+        data = (
+            sheet_format.prestart_xlsx_bytes(rows)
+            if args.prestart
+            else sheet_format.xlsx_bytes(rows)
+        )
+        Path(args.out).write_bytes(data)
+        print(f"wrote {args.out}")
         return 0
 
-    if args.full or args.include_raw:
+    if args.prestart:
+        fieldnames = sheet_format.PRESTART_COLUMNS
+        rows = sheet_format.prestart_rows(rows)
+    elif args.full or args.include_raw:
         fieldnames = COLUMNS + (["raw"] if args.include_raw else [])
     else:
         fieldnames = sheet_format.SIMPLE_COLUMNS

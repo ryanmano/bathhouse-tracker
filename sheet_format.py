@@ -7,7 +7,8 @@ store a duration in minutes).
 """
 from __future__ import annotations
 
-from datetime import datetime, timedelta
+import re
+from datetime import datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
 
 EASTERN = ZoneInfo("America/New_York")
@@ -19,15 +20,23 @@ SIMPLE_COLUMNS = [
     "observed", "price", "spots_left", "capacity",
 ]
 
+# Pre-start summary: one row per class = its final reading before it began.
+PRESTART_COLUMNS = [
+    "brand", "location", "class", "date", "time",
+    "price", "spots_left", "capacity", "read_at", "mins_before",
+]
+
 HEADERS = {
     "brand": "Brand", "location": "Location", "class": "Class", "date": "Date",
     "time": "Time", "price": "Price", "spots_left": "Spots Left",
     "capacity": "Total Spots", "notes": "Notes", "observed": "Observed",
+    "read_at": "Last Read", "mins_before": "Min Before Start",
 }
 
 COLUMN_WIDTHS = {
     "brand": 11, "location": 16, "class": 40, "date": 12, "time": 15,
     "price": 9, "spots_left": 11, "capacity": 11, "observed": 15,
+    "read_at": 16, "mins_before": 17,
 }
 
 # Extra PostgREST select expressions that pull end-time ingredients out of the
@@ -42,8 +51,17 @@ EXTRA_SELECTS = [
 def _parse(ts) -> datetime | None:
     if not ts:
         return None
+    s = str(ts).replace("Z", "+00:00")
+    # Normalize odd fractional-second widths (e.g. "...4935+00:00") so this
+    # also works on Python 3.9's stricter fromisoformat, not just CI's 3.12.
+    m = re.match(
+        r"^(\d{4}-\d{2}-\d{2}[T ]\d{2}:\d{2}:\d{2})(?:\.(\d+))?([+-]\d{2}:\d{2})?$", s
+    )
+    if m:
+        base, frac, off = m.group(1), m.group(2), m.group(3) or ""
+        s = base + (f".{frac.ljust(6, '0')[:6]}" if frac else "") + off
     try:
-        return datetime.fromisoformat(str(ts).replace("Z", "+00:00"))
+        return datetime.fromisoformat(s)
     except ValueError:
         return None
 
@@ -123,7 +141,35 @@ def simple_rows(rows: list[dict]) -> list[dict]:
     return [simple_row(r) for r in ordered]
 
 
-def xlsx_bytes(rows: list[dict]) -> bytes:
+def prestart_rows(rows: list[dict], now: datetime | None = None) -> list[dict]:
+    """One row per class: its final reading taken at/before the class start.
+
+    Only classes that have already started are included (their pre-start reading
+    is final). `mins_before` is how many minutes before start that reading was
+    taken — small numbers mean we caught the last-minute booking state.
+    """
+    now = now or datetime.now(timezone.utc)
+    best: dict[tuple, tuple[datetime, datetime, dict]] = {}
+    for r in rows:
+        start = _parse(r.get("start_time"))
+        obs = _parse(r.get("observed_at"))
+        if start is None or obs is None or start >= now or obs > start:
+            continue
+        key = (r.get("brand"), r.get("session_id"))
+        if key not in best or obs > best[key][0]:
+            best[key] = (obs, start, r)
+
+    out: list[tuple[datetime, dict]] = []
+    for obs, start, r in best.values():
+        rec = simple_row(r)
+        rec["read_at"] = rec.pop("observed")
+        rec["mins_before"] = round((start - obs).total_seconds() / 60)
+        out.append((start, rec))
+    out.sort(key=lambda pair: pair[0])
+    return [rec for _, rec in out]
+
+
+def _write_xlsx(rows: list[dict], columns: list[str], title: str) -> bytes:
     """Styled Excel workbook: bold banded header, frozen top row, filters."""
     import io
 
@@ -133,9 +179,9 @@ def xlsx_bytes(rows: list[dict]) -> bytes:
 
     wb = Workbook()
     ws = wb.active
-    ws.title = "Sessions"
+    ws.title = title
 
-    ws.append([HEADERS[c] for c in SIMPLE_COLUMNS])
+    ws.append([HEADERS[c] for c in columns])
     header_font = Font(bold=True, color="FFFFFF", size=12)
     header_fill = PatternFill("solid", fgColor="1F3A5F")
     for cell in ws[1]:
@@ -144,10 +190,10 @@ def xlsx_bytes(rows: list[dict]) -> bytes:
         cell.alignment = Alignment(horizontal="center", vertical="center")
     ws.row_dimensions[1].height = 22
 
-    for rec in simple_rows(rows):
-        ws.append([rec.get(c) for c in SIMPLE_COLUMNS])
+    for rec in rows:
+        ws.append([rec.get(c) for c in columns])
 
-    for i, col in enumerate(SIMPLE_COLUMNS, start=1):
+    for i, col in enumerate(columns, start=1):
         ws.column_dimensions[get_column_letter(i)].width = COLUMN_WIDTHS.get(col, 12)
     ws.freeze_panes = "A2"
     ws.auto_filter.ref = ws.dimensions
@@ -155,3 +201,13 @@ def xlsx_bytes(rows: list[dict]) -> bytes:
     buf = io.BytesIO()
     wb.save(buf)
     return buf.getvalue()
+
+
+def xlsx_bytes(rows: list[dict]) -> bytes:
+    """Full time-series sheet: every reading, one row each."""
+    return _write_xlsx(simple_rows(rows), SIMPLE_COLUMNS, "Sessions")
+
+
+def prestart_xlsx_bytes(rows: list[dict]) -> bytes:
+    """Clean summary: one row per class, its final pre-start reading."""
+    return _write_xlsx(prestart_rows(rows), PRESTART_COLUMNS, "Pre-start")

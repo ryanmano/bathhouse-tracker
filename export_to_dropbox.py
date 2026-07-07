@@ -6,6 +6,11 @@ share gets updates automatically). Styled Excel workbooks:
 
     latest.xlsx                         newest snapshot of every upcoming
                                         session — refreshed every run
+    prestart-summary.xlsx               ONE row per class = its final reading
+                                        before doors opened, with how many
+                                        minutes before start it was taken
+                                        (rolling last 30 days) — refreshed
+                                        every run
     bathhouse-tracker-YYYY-MM-DD.xlsx   complete hour-by-hour history for a
                                         finished UTC day — uploaded once,
                                         shortly after that day ends (missed
@@ -131,6 +136,20 @@ def main() -> int:
             dropbox_upload(client, token, "/latest.xlsx", sheet_bytes(rows))
         else:
             print("no snapshots in database yet; skipping latest.xlsx")
+
+        # 1b) prestart-summary.xlsx — final pre-start reading per class,
+        #     rolling last 30 days (bounded so this stays quick every run).
+        now = datetime.now(timezone.utc)
+        window_start = (now - timedelta(days=30)).date().isoformat()
+        recent = sb_rows(
+            client,
+            [
+                ("start_time", f"gte.{window_start}"),
+                ("start_time", f"lt.{now.isoformat()}"),
+            ],
+        )
+        summary = sheet_format.prestart_xlsx_bytes(recent)
+        dropbox_upload(client, token, "/prestart-summary.xlsx", summary)
 
         # 2) One permanent file per completed UTC day (backfill missed days).
         today = datetime.now(timezone.utc).date()
