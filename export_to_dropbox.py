@@ -140,17 +140,15 @@ def main() -> int:
     with normalize.new_client() as client:
         token = dropbox_access_token(client)
 
-        # 1) latest.xlsx — one row per session from the most recent snapshot.
-        newest = latest_observed_at(client)
-        if newest:
-            rows = sb_rows(client, [("observed_at", f"eq.{newest}")])
-            dropbox_upload(client, token, f"{SHARE_DIR}/latest.xlsx", sheet_bytes(rows))
-        else:
-            print("no snapshots in database yet; skipping latest.xlsx")
+        # The shared folder holds ONLY the clean daily pre-start summaries.
+        # (latest.xlsx and the full hourly bathhouse-tracker-* history files
+        # were intentionally removed — too noisy for the daily viewer. All raw
+        # data still lives in the database and can be exported on demand via
+        # export_to_csv.py if the detailed view is ever needed again.)
 
-        # 1b) prestart-summary-YYYY-MM-DD.xlsx — one clean daily file, grouped
-        #     by each class's Eastern start date. Today refreshes every run;
-        #     past days are written once (backfilled up to BACKFILL_DAYS).
+        # prestart-summary-YYYY-MM-DD.xlsx — one clean daily file, grouped
+        # by each class's Eastern start date. Today refreshes every run;
+        # past days are written once (backfilled up to BACKFILL_DAYS).
         now = datetime.now(timezone.utc)
         window_start = (now - timedelta(days=BACKFILL_DAYS)).date().isoformat()
         recent = sb_rows(
@@ -178,35 +176,6 @@ def main() -> int:
             data = sheet_format.prestart_xlsx_bytes(day_rows)  # 3 tabs, one/brand
             dropbox_upload(client, token, path, data)
 
-        # Remove the previous single rolling summary if it lingers (best-effort).
-        try:
-            client.post(
-                "https://api.dropboxapi.com/2/files/delete_v2",
-                headers={"Authorization": f"Bearer {token}"},
-                json={"path": "/prestart-summary.xlsx"},
-            )
-        except Exception:
-            pass
-
-        # 2) One permanent file per completed UTC day (backfill missed days).
-        today = datetime.now(timezone.utc).date()
-        for delta in range(1, BACKFILL_DAYS + 1):
-            day = today - timedelta(days=delta)
-            if day.isoformat() < EARLIEST_DAY:
-                continue  # off-timing early days intentionally excluded
-            path = f"{SHARE_DIR}/bathhouse-tracker-{day.isoformat()}.xlsx"
-            if dropbox_exists(client, token, path):
-                continue
-            day_rows = sb_rows(
-                client,
-                [
-                    ("observed_at", f"gte.{day.isoformat()}"),
-                    ("observed_at", f"lt.{(day + timedelta(days=1)).isoformat()}"),
-                ],
-            )
-            if not day_rows:
-                continue  # day predates data collection
-            dropbox_upload(client, token, path, sheet_bytes(day_rows))
     return 0
 
 
