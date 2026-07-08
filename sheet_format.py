@@ -45,7 +45,7 @@ HEADERS = {
 
 COLUMN_WIDTHS = {
     "brand": 13, "location": 16, "class": 48, "date": 13, "time": 15,
-    "price": 10, "spots_left": 12, "spots_booked": 13, "capacity": 13,
+    "price": 11, "spots_left": 13, "spots_booked": 16, "capacity": 15,
     "observed": 18, "read_at": 18, "mins_before": 18,
 }
 
