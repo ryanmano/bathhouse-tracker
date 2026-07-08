@@ -362,8 +362,9 @@ def prestart_xlsx_bytes(rows: list[dict]) -> bytes:
 def summary_rows(rows: list[dict], earliest: str | None = None) -> list[dict]:
     """One row per club per day: that day's final totals (spots + weighted price).
 
-    Grouped by brand+location and Eastern calendar day, ordered by club then
-    date. Days before `earliest` (YYYY-MM-DD) are skipped.
+    Grouped into day blocks — all clubs for a day listed together, ordered by
+    club, then a blank separator row before the next day. Days before
+    `earliest` (YYYY-MM-DD) are skipped.
     """
     groups: dict[tuple[str, str, str], list[dict]] = {}
     for r in rows:
@@ -376,13 +377,18 @@ def summary_rows(rows: list[dict], earliest: str | None = None) -> list[dict]:
         groups.setdefault((r.get("brand") or "", r.get("location") or "", ymd), []).append(r)
 
     order = {b: i for i, b in enumerate(BRAND_ORDER)}
-    keyed = sorted(groups, key=lambda k: (order.get(k[0].lower(), 99), k[1], k[2]))
+    # date first, then club (brand order, location) within each day
+    keyed = sorted(groups, key=lambda k: (k[2], order.get(k[0].lower(), 99), k[1]))
 
     out: list[dict] = []
+    prev_ymd: str | None = None
     for brand, location, ymd in keyed:
         recs = prestart_rows(groups[(brand, location, ymd)])
         if not recs:
             continue
+        if prev_ymd is not None and ymd != prev_ymd:
+            out.append({c: "" for c in SUMMARY_COLUMNS})  # blank row between days
+        prev_ymd = ymd
         totals = _totals_row(recs)
         d = datetime.fromisoformat(ymd)
         out.append({
