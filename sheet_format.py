@@ -27,13 +27,14 @@ PRESTART_COLUMNS = [
     "brand", "location", "class", "date", "time",
     "price", "spots_left", "spots_booked", "capacity", "read_at", "mins_before",
 ]
+# Each tab is one brand+location, so brand and location are dropped per tab.
 PRESTART_SHEET_COLUMNS = [
-    "location", "class", "date", "time",
+    "class", "date", "time",
     "price", "spots_left", "spots_booked", "capacity", "read_at", "mins_before",
 ]
 
-# Brands get their own tab, in this order.
-BRAND_TABS = [("bathhouse", "Bathhouse"), ("othership", "Othership"), ("lore", "Lore")]
+# Brand display order for tab arrangement.
+BRAND_ORDER = ["bathhouse", "othership", "lore"]
 
 HEADERS = {
     "brand": "Brand", "location": "Location", "class": "Class", "date": "Date",
@@ -203,10 +204,58 @@ def prestart_rows(rows: list[dict], now: datetime | None = None) -> list[dict]:
     return [rec for _, rec in out]
 
 
-def _style_sheet(ws, columns: list[str], rows: list[dict]) -> None:
-    """Fill one worksheet: bold banded header, frozen top row, filters, widths."""
-    from openpyxl.styles import Alignment, Font, PatternFill
+def _totals_row(recs: list[dict]) -> dict:
+    """Day totals for one location: summed spots + weighted-average price.
+
+    The average is revenue-weighted — sum(price * spots_booked) / sum(spots_booked)
+    — i.e. the average dollars actually spent per booked ticket, not the plain
+    average of listed prices. (Uses each session's final pre-start price as a
+    proxy for what its tickets sold at.) Blank when no priced bookings exist,
+    as with Othership, whose price isn't public.
+    """
+    row = {c: "" for c in PRESTART_SHEET_COLUMNS}
+    row["class"] = "TOTALS"
+    left = booked = cap = 0
+    has_left = has_booked = has_cap = False
+    revenue = 0.0
+    tickets_priced = 0
+    for r in recs:
+        sl, sb, c = r.get("spots_left"), r.get("spots_booked"), r.get("capacity")
+        if isinstance(sl, (int, float)):
+            left += sl; has_left = True
+        if isinstance(sb, (int, float)):
+            booked += sb; has_booked = True
+        if isinstance(c, (int, float)):
+            cap += c; has_cap = True
+        price = r.get("price")
+        if isinstance(price, str) and price.strip() and isinstance(sb, (int, float)) and sb > 0:
+            try:
+                revenue += float(price.replace("$", "").replace(",", "")) * sb
+                tickets_priced += sb
+            except ValueError:
+                pass
+    if has_left:
+        row["spots_left"] = left
+    if has_booked:
+        row["spots_booked"] = booked
+    if has_cap:
+        row["capacity"] = cap
+    if tickets_priced > 0:
+        row["price"] = _money(revenue / tickets_priced)
+    return row
+
+
+def _style_sheet(ws, columns: list[str], rows: list[dict], totals: dict | None = None) -> None:
+    """Fill one worksheet: bold banded header, frozen top row, filters, widths.
+
+    When `totals` is given it is appended as a bold, shaded summary row that is
+    kept outside the filter range.
+    """
+    from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
     from openpyxl.utils import get_column_letter
+
+    left_align = Alignment(horizontal="left", vertical="center")
+    center = Alignment(horizontal="center", vertical="center")
 
     ws.append([HEADERS[c] for c in columns])
     header_font = Font(bold=True, color="FFFFFF", size=12)
@@ -219,17 +268,28 @@ def _style_sheet(ws, columns: list[str], rows: list[dict]) -> None:
 
     for rec in rows:
         ws.append([rec.get(c) for c in columns])
+    last_data_row = ws.max_row  # header + data, before any totals row
 
-    left = Alignment(horizontal="left", vertical="center")
-    center = Alignment(horizontal="center", vertical="center")
     for i, col in enumerate(columns, start=1):
         letter = get_column_letter(i)
         ws.column_dimensions[letter].width = COLUMN_WIDTHS.get(col, 12)
-        align = center if col in CENTERED_COLUMNS else left
+        align = center if col in CENTERED_COLUMNS else left_align
         for cell in ws[letter][1:]:  # data rows only; header keeps its styling
             cell.alignment = align
     ws.freeze_panes = "A2"
-    ws.auto_filter.ref = ws.dimensions
+    ws.auto_filter.ref = f"A1:{get_column_letter(len(columns))}{last_data_row}"
+
+    if totals is not None:
+        ws.append([totals.get(c) for c in columns])
+        tr = ws.max_row
+        totals_fill = PatternFill("solid", fgColor="E8EEF7")
+        top_border = Border(top=Side(style="thin", color="1F3A5F"))
+        for i, col in enumerate(columns, start=1):
+            cell = ws.cell(tr, i)
+            cell.font = Font(bold=True)
+            cell.fill = totals_fill
+            cell.border = top_border
+            cell.alignment = center if col in CENTERED_COLUMNS else left_align
 
 
 def _write_xlsx(rows: list[dict], columns: list[str], title: str) -> bytes:
@@ -251,19 +311,40 @@ def xlsx_bytes(rows: list[dict]) -> bytes:
     return _write_xlsx(simple_rows(rows), SIMPLE_COLUMNS, "Sessions")
 
 
+def _tab_name(brand: str, location: str) -> str:
+    """Excel-safe tab title, e.g. 'Bathhouse Atlantic Ave' (max 31 chars)."""
+    name = f"{(brand or '').capitalize()} {location or ''}".strip()
+    for ch in r"[]:*?/\\":
+        name = name.replace(ch, " ")
+    return name[:31] or "Sheet"
+
+
 def prestart_xlsx_bytes(rows: list[dict]) -> bytes:
-    """Clean summary workbook: one tab per brand, one row per class within it."""
+    """Clean summary workbook: one tab per brand+location, with a TOTALS row."""
     import io
 
     from openpyxl import Workbook
 
     recs = prestart_rows(rows)
+    groups: dict[tuple[str, str], list[dict]] = {}
+    for r in recs:
+        groups.setdefault((r.get("brand") or "", r.get("location") or ""), []).append(r)
+
+    order = {b: i for i, b in enumerate(BRAND_ORDER)}
+    keys = sorted(groups, key=lambda k: (order.get(k[0].lower(), 99), k[1]))
+
     wb = Workbook()
-    for idx, (key, label) in enumerate(BRAND_TABS):
-        brand_recs = [r for r in recs if (r.get("brand") or "").lower() == key]
-        ws = wb.active if idx == 0 else wb.create_sheet()
-        ws.title = label
-        _style_sheet(ws, PRESTART_SHEET_COLUMNS, brand_recs)
+    first = True
+    for brand, location in keys:
+        group = groups[(brand, location)]
+        ws = wb.active if first else wb.create_sheet()
+        first = False
+        ws.title = _tab_name(brand, location)
+        _style_sheet(ws, PRESTART_SHEET_COLUMNS, group, totals=_totals_row(group))
+
+    if first:  # no started classes at all — keep a valid, empty workbook
+        wb.active.title = "Pre-start"
+        _style_sheet(wb.active, PRESTART_SHEET_COLUMNS, [])
     buf = io.BytesIO()
     wb.save(buf)
     return buf.getvalue()
