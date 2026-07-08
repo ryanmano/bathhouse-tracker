@@ -21,27 +21,37 @@ SIMPLE_COLUMNS = [
 ]
 
 # Pre-start summary: one row per class = its final reading before it began.
+# The daily file is split into one tab per brand, so the brand column is
+# dropped from the per-tab layout (the tab name says the brand).
 PRESTART_COLUMNS = [
     "brand", "location", "class", "date", "time",
-    "price", "spots_left", "capacity", "read_at", "mins_before",
+    "price", "spots_left", "spots_booked", "capacity", "read_at", "mins_before",
 ]
+PRESTART_SHEET_COLUMNS = [
+    "location", "class", "date", "time",
+    "price", "spots_left", "spots_booked", "capacity", "read_at", "mins_before",
+]
+
+# Brands get their own tab, in this order.
+BRAND_TABS = [("bathhouse", "Bathhouse"), ("othership", "Othership"), ("lore", "Lore")]
 
 HEADERS = {
     "brand": "Brand", "location": "Location", "class": "Class", "date": "Date",
     "time": "Time", "price": "Price", "spots_left": "Spots Left",
-    "capacity": "Total Spots", "notes": "Notes", "observed": "Observed",
+    "spots_booked": "Spots Booked", "capacity": "Total Spots",
+    "notes": "Notes", "observed": "Observed",
     "read_at": "Last Read", "mins_before": "Min Before Start",
 }
 
 COLUMN_WIDTHS = {
     "brand": 13, "location": 16, "class": 48, "date": 13, "time": 15,
-    "price": 10, "spots_left": 12, "capacity": 13, "observed": 18,
-    "read_at": 18, "mins_before": 18,
+    "price": 10, "spots_left": 12, "spots_booked": 13, "capacity": 13,
+    "observed": 18, "read_at": 18, "mins_before": 18,
 }
 
 # Short columns look best centered; the wide text columns stay left-aligned.
 CENTERED_COLUMNS = {
-    "date", "time", "price", "spots_left", "capacity",
+    "date", "time", "price", "spots_left", "spots_booked", "capacity",
     "observed", "read_at", "mins_before",
 }
 
@@ -142,6 +152,7 @@ def simple_row(row: dict) -> dict:
         "time": _time_range(start_et, end_et) if start_et else "",
         "price": _money(row.get("price")),
         "spots_left": row.get("spots_available"),
+        "spots_booked": row.get("spots_booked"),
         "capacity": row.get("capacity"),
         "notes": notes,
         "observed": f"{observed_et.strftime('%b')} {observed_et.day}, {_clock(observed_et)}"
@@ -192,17 +203,10 @@ def prestart_rows(rows: list[dict], now: datetime | None = None) -> list[dict]:
     return [rec for _, rec in out]
 
 
-def _write_xlsx(rows: list[dict], columns: list[str], title: str) -> bytes:
-    """Styled Excel workbook: bold banded header, frozen top row, filters."""
-    import io
-
-    from openpyxl import Workbook
+def _style_sheet(ws, columns: list[str], rows: list[dict]) -> None:
+    """Fill one worksheet: bold banded header, frozen top row, filters, widths."""
     from openpyxl.styles import Alignment, Font, PatternFill
     from openpyxl.utils import get_column_letter
-
-    wb = Workbook()
-    ws = wb.active
-    ws.title = title
 
     ws.append([HEADERS[c] for c in columns])
     header_font = Font(bold=True, color="FFFFFF", size=12)
@@ -227,6 +231,16 @@ def _write_xlsx(rows: list[dict], columns: list[str], title: str) -> bytes:
     ws.freeze_panes = "A2"
     ws.auto_filter.ref = ws.dimensions
 
+
+def _write_xlsx(rows: list[dict], columns: list[str], title: str) -> bytes:
+    """Single-sheet styled workbook."""
+    import io
+
+    from openpyxl import Workbook
+
+    wb = Workbook()
+    _style_sheet(wb.active, columns, rows)
+    wb.active.title = title
     buf = io.BytesIO()
     wb.save(buf)
     return buf.getvalue()
@@ -238,5 +252,18 @@ def xlsx_bytes(rows: list[dict]) -> bytes:
 
 
 def prestart_xlsx_bytes(rows: list[dict]) -> bytes:
-    """Clean summary: one row per class, its final pre-start reading."""
-    return _write_xlsx(prestart_rows(rows), PRESTART_COLUMNS, "Pre-start")
+    """Clean summary workbook: one tab per brand, one row per class within it."""
+    import io
+
+    from openpyxl import Workbook
+
+    recs = prestart_rows(rows)
+    wb = Workbook()
+    for idx, (key, label) in enumerate(BRAND_TABS):
+        brand_recs = [r for r in recs if (r.get("brand") or "").lower() == key]
+        ws = wb.active if idx == 0 else wb.create_sheet()
+        ws.title = label
+        _style_sheet(ws, PRESTART_SHEET_COLUMNS, brand_recs)
+    buf = io.BytesIO()
+    wb.save(buf)
+    return buf.getvalue()

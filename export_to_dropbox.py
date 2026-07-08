@@ -173,12 +173,9 @@ def main() -> int:
             path = f"{SHARE_DIR}/prestart-summary-{day}.xlsx"
             if day != today_et and dropbox_exists(client, token, path):
                 continue  # completed days are final — write once
-            prows = sheet_format.prestart_rows(day_rows)
-            if not prows:
+            if not sheet_format.prestart_rows(day_rows):
                 continue  # no classes have started yet today
-            data = sheet_format._write_xlsx(
-                prows, sheet_format.PRESTART_COLUMNS, "Pre-start"
-            )
+            data = sheet_format.prestart_xlsx_bytes(day_rows)  # 3 tabs, one/brand
             dropbox_upload(client, token, path, data)
 
         # Remove the previous single rolling summary if it lingers (best-effort).
