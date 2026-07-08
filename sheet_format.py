@@ -230,10 +230,14 @@ def _totals_row(recs: list[dict]) -> dict:
         price = r.get("price")
         if isinstance(price, str) and price.strip() and isinstance(sb, (int, float)) and sb > 0:
             try:
-                revenue += float(price.replace("$", "").replace(",", "")) * sb
-                tickets_priced += sb
+                pv = float(price.replace("$", "").replace(",", ""))
             except ValueError:
-                pass
+                pv = 0.0
+            # Exclude $0 (member-included / free) tickets from the average —
+            # they aren't a dollars-spent signal.
+            if pv > 0:
+                revenue += pv * sb
+                tickets_priced += sb
     if has_left:
         row["spots_left"] = left
     if has_booked:
