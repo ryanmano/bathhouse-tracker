@@ -173,8 +173,21 @@ def main() -> int:
                 continue  # completed days are final — write once
             if not sheet_format.prestart_rows(day_rows):
                 continue  # no classes have started yet today
-            data = sheet_format.prestart_xlsx_bytes(day_rows)  # 3 tabs, one/brand
+            data = sheet_format.prestart_xlsx_bytes(day_rows)  # one tab per club
             dropbox_upload(client, token, path, data)
+
+        # summary.xlsx — running overview: one row per club per day with that
+        # day's final totals. Covers the last 60 days (bounded), from EARLIEST_DAY.
+        sum_start = (now - timedelta(days=60)).date().isoformat()
+        sum_rows = sb_rows(
+            client,
+            [
+                ("start_time", f"gte.{max(sum_start, EARLIEST_DAY)}"),
+                ("start_time", f"lt.{now.isoformat()}"),
+            ],
+        )
+        summary = sheet_format.summary_xlsx_bytes(sum_rows, earliest=EARLIEST_DAY)
+        dropbox_upload(client, token, f"{SHARE_DIR}/summary.xlsx", summary)
 
     return 0
 

@@ -36,17 +36,22 @@ PRESTART_SHEET_COLUMNS = [
 # Brand display order for tab arrangement.
 BRAND_ORDER = ["bathhouse", "othership", "lore"]
 
+# Running overview: one row per club per day with that day's final totals.
+SUMMARY_COLUMNS = [
+    "club", "date", "spots_left", "spots_booked", "capacity", "price",
+]
+
 HEADERS = {
-    "brand": "Brand", "location": "Location", "class": "Class", "date": "Date",
-    "time": "Time", "price": "Price", "spots_left": "Spots Left",
+    "brand": "Brand", "location": "Location", "club": "Club", "class": "Class",
+    "date": "Date", "time": "Time", "price": "Price", "spots_left": "Spots Left",
     "spots_booked": "Spots Booked", "capacity": "Total Spots",
     "notes": "Notes", "observed": "Observed",
     "read_at": "Last Read", "mins_before": "Min Before Start",
 }
 
 COLUMN_WIDTHS = {
-    "brand": 13, "location": 16, "class": 48, "date": 13, "time": 15,
-    "price": 11, "spots_left": 13, "spots_booked": 16, "capacity": 15,
+    "brand": 13, "location": 16, "club": 26, "class": 48, "date": 13, "time": 15,
+    "price": 12, "spots_left": 13, "spots_booked": 16, "capacity": 15,
     "observed": 18, "read_at": 18, "mins_before": 18,
 }
 
@@ -352,3 +357,45 @@ def prestart_xlsx_bytes(rows: list[dict]) -> bytes:
     buf = io.BytesIO()
     wb.save(buf)
     return buf.getvalue()
+
+
+def summary_rows(rows: list[dict], earliest: str | None = None) -> list[dict]:
+    """One row per club per day: that day's final totals (spots + weighted price).
+
+    Grouped by brand+location and Eastern calendar day, ordered by club then
+    date. Days before `earliest` (YYYY-MM-DD) are skipped.
+    """
+    groups: dict[tuple[str, str, str], list[dict]] = {}
+    for r in rows:
+        st = _parse(r.get("start_time"))
+        if st is None:
+            continue
+        ymd = st.astimezone(EASTERN).date().isoformat()
+        if earliest and ymd < earliest:
+            continue
+        groups.setdefault((r.get("brand") or "", r.get("location") or "", ymd), []).append(r)
+
+    order = {b: i for i, b in enumerate(BRAND_ORDER)}
+    keyed = sorted(groups, key=lambda k: (order.get(k[0].lower(), 99), k[1], k[2]))
+
+    out: list[dict] = []
+    for brand, location, ymd in keyed:
+        recs = prestart_rows(groups[(brand, location, ymd)])
+        if not recs:
+            continue
+        totals = _totals_row(recs)
+        d = datetime.fromisoformat(ymd)
+        out.append({
+            "club": _tab_name(brand, location),
+            "date": f"{d.strftime('%a %b')} {d.day}",
+            "spots_left": totals["spots_left"],
+            "spots_booked": totals["spots_booked"],
+            "capacity": totals["capacity"],
+            "price": totals["price"],
+        })
+    return out
+
+
+def summary_xlsx_bytes(rows: list[dict], earliest: str | None = None) -> bytes:
+    """Single 'Summary' sheet: club × day final totals, pre-start styling."""
+    return _write_xlsx(summary_rows(rows, earliest), SUMMARY_COLUMNS, "Summary")
