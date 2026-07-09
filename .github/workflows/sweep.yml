@@ -1,14 +1,20 @@
 name: prestart-sweep
 
-# Lightweight pre-start check: every 5 minutes during venue operating hours
-# (5am-11:55pm ET), snapshot only the sessions starting in the next few
-# minutes — captures the final booking rush right before class begins.
+# Lightweight pre-start check: snapshot only the sessions starting in the next
+# few minutes — captures the final booking rush right before class begins.
+#
+# Triggered every 5 minutes by the Supabase pg_cron scheduler via
+# workflow_dispatch (reliable). GitHub's own `schedule:` cron was removed: it
+# was redundant with the dispatch trigger and mostly load-shed by GitHub, so it
+# only added occasional "run cancelled" noise.
 on:
-  schedule:
-    # offset from :00/:05 marks — GitHub sheds load on round minutes
-    - cron: "2-57/5 9-23 * * *"  # 5:00am-7:55pm ET (EDT)
-    - cron: "2-57/5 0-3 * * *"   # 8:00pm-11:55pm ET (EDT)
   workflow_dispatch: {}
+
+# Never let queued runs pile up and cancel each other; a run either starts or
+# is skipped, and the next dispatch (5 min later) covers any gap.
+concurrency:
+  group: prestart-sweep
+  cancel-in-progress: false
 
 jobs:
   sweep:
