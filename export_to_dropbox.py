@@ -23,7 +23,6 @@ Dropbox secrets are not configured, so the workflow works before setup.
 """
 from __future__ import annotations
 
-import collections
 import json
 import os
 import sys
@@ -53,26 +52,79 @@ def _sb_headers() -> dict:
     return {"apikey": key, "Authorization": f"Bearer {key}"}
 
 
-def sb_rows(client, filters: list[tuple[str, str]]) -> list[dict]:
-    """Fetch snapshot rows from Supabase with pagination."""
+def sb_rows(client, filters: list[tuple[str, str]], with_time_raw: bool = True) -> list[dict]:
+    """Fetch snapshot rows from Supabase with pagination.
+
+    `with_time_raw=False` skips the raw-JSON end-time extractions (needed only
+    for the Time column) — much cheaper for the summary, which has no Time.
+    """
     url = os.environ["SUPABASE_URL"].rstrip("/") + "/rest/v1/snapshots"
-    base = [
-        ("select", ",".join(COLUMNS + sheet_format.EXTRA_SELECTS)),
-        ("order", "observed_at.asc,brand.asc"),
-    ]
+    cols = ["id"] + COLUMNS + (sheet_format.EXTRA_SELECTS if with_time_raw else [])
+    select = ",".join(cols)
     rows: list[dict] = []
-    offset = 0
+    last_id = 0
     while True:
+        # Keyset pagination by primary key: cheap for the DB at any depth
+        # (no deep OFFSET re-scan). Extra retries absorb free-tier 500 blips.
         page = normalize.get_json(
             client,
             url,
-            params=base + filters + [("limit", str(PAGE)), ("offset", str(offset))],
+            params=[("select", select), ("order", "id.asc"), ("limit", str(PAGE))]
+            + filters
+            + [("id", f"gt.{last_id}")],
             headers=_sb_headers(),
+            retries=6,
+            backoff=1.5,
         )
         rows.extend(page)
         if len(page) < PAGE:
             return rows
-        offset += PAGE
+        last_id = page[-1]["id"]
+
+
+def _et_day_bounds_utc(ymd: str) -> tuple[datetime, datetime]:
+    """UTC [start, end) for one Eastern calendar day (YYYY-MM-DD)."""
+    from datetime import date
+
+    d = date.fromisoformat(ymd)
+    start_et = datetime(d.year, d.month, d.day, tzinfo=EASTERN)
+    end_et = start_et + timedelta(days=1)
+    return start_et.astimezone(timezone.utc), end_et.astimezone(timezone.utc)
+
+
+def fetch_day(client, ymd: str, with_time_raw: bool = True) -> list[dict]:
+    """Readings for classes that START on the given Eastern day.
+
+    Bounded on BOTH start_time (the class day) and observed_at (readings from
+    ~that day only), so we pull each session's near-start rows instead of its
+    entire multi-week observation history. This keeps every query small enough
+    that Postgres never times out, no matter how large the table grows.
+    """
+    s_utc, e_utc = _et_day_bounds_utc(ymd)
+    obs_lo = s_utc - timedelta(hours=12)  # cover pre-midnight reads of early classes
+    return sb_rows(
+        client,
+        [
+            ("start_time", f"gte.{s_utc.isoformat()}"),
+            ("start_time", f"lt.{e_utc.isoformat()}"),
+            ("observed_at", f"gte.{obs_lo.isoformat()}"),
+            ("observed_at", f"lt.{e_utc.isoformat()}"),
+        ],
+        with_time_raw=with_time_raw,
+    )
+
+
+def _days_from(earliest: str, today_et: str) -> list[str]:
+    """List of YYYY-MM-DD Eastern days from `earliest` through `today_et`."""
+    from datetime import date
+
+    start = date.fromisoformat(max(earliest, EARLIEST_DAY))
+    end = date.fromisoformat(today_et)
+    out, d = [], start
+    while d <= end:
+        out.append(d.isoformat())
+        d += timedelta(days=1)
+    return out
 
 
 def latest_observed_at(client) -> str | None:
@@ -146,46 +198,28 @@ def main() -> int:
         # data still lives in the database and can be exported on demand via
         # export_to_csv.py if the detailed view is ever needed again.)
 
-        # prestart-summary-YYYY-MM-DD.xlsx — one clean daily file, grouped
-        # by each class's Eastern start date. Today refreshes every run;
-        # past days are written once (backfilled up to BACKFILL_DAYS).
         now = datetime.now(timezone.utc)
-        window_start = (now - timedelta(days=BACKFILL_DAYS)).date().isoformat()
-        recent = sb_rows(
-            client,
-            [
-                ("start_time", f"gte.{window_start}"),
-                ("start_time", f"lt.{now.isoformat()}"),
-            ],
-        )
-        by_day: dict[str, list[dict]] = collections.defaultdict(list)
-        for r in recent:
-            st = sheet_format._parse(r.get("start_time"))
-            if st is not None:
-                by_day[st.astimezone(EASTERN).date().isoformat()].append(r)
-
         today_et = now.astimezone(EASTERN).date().isoformat()
-        for day, day_rows in sorted(by_day.items()):
-            if day < EARLIEST_DAY:
-                continue  # off-timing early days intentionally excluded
+        days = _days_from(EARLIEST_DAY, today_et)  # each queried in a small chunk
+
+        # prestart-summary-YYYY-MM-DD.xlsx — one clean daily file per Eastern
+        # day. Today refreshes every run; completed days are written once.
+        for day in days:
             path = f"{SHARE_DIR}/prestart-summary-{day}.xlsx"
             if day != today_et and dropbox_exists(client, token, path):
-                continue  # completed days are final — write once
+                continue  # completed day already published — leave it
+            day_rows = fetch_day(client, day, with_time_raw=True)
             if not sheet_format.prestart_rows(day_rows):
-                continue  # no classes have started yet today
+                continue  # no classes have started yet
             data = sheet_format.prestart_xlsx_bytes(day_rows)  # one tab per club
             dropbox_upload(client, token, path, data)
 
         # summary.xlsx — running overview: one row per club per day with that
-        # day's final totals. Covers the last 60 days (bounded), from EARLIEST_DAY.
-        sum_start = (now - timedelta(days=60)).date().isoformat()
-        sum_rows = sb_rows(
-            client,
-            [
-                ("start_time", f"gte.{max(sum_start, EARLIEST_DAY)}"),
-                ("start_time", f"lt.{now.isoformat()}"),
-            ],
-        )
+        # day's final totals. Built from the same per-day chunks (light query,
+        # no raw JSON needed since the summary has no Time column).
+        sum_rows: list[dict] = []
+        for day in days:
+            sum_rows.extend(fetch_day(client, day, with_time_raw=False))
         summary = sheet_format.summary_xlsx_bytes(sum_rows, earliest=EARLIEST_DAY)
         dropbox_upload(client, token, f"{SHARE_DIR}/summary.xlsx", summary)
 
