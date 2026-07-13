@@ -95,23 +95,30 @@ def _et_day_bounds_utc(ymd: str) -> tuple[datetime, datetime]:
 def fetch_day(client, ymd: str, with_time_raw: bool = True) -> list[dict]:
     """Readings for classes that START on the given Eastern day.
 
-    Bounded on BOTH start_time (the class day) and observed_at (readings from
-    ~that day only), so we pull each session's near-start rows instead of its
-    entire multi-week observation history. This keeps every query small enough
-    that Postgres never times out, no matter how large the table grows.
+    Queried ONE BRAND AT A TIME so Postgres can use the existing
+    (brand, start_time) index — an equality on brand plus a range on
+    start_time — instead of a full-table scan that times out as the table
+    grows. Also bounded on observed_at so we pull each session's near-start
+    rows, not its entire multi-week observation history.
     """
     s_utc, e_utc = _et_day_bounds_utc(ymd)
     obs_lo = s_utc - timedelta(hours=12)  # cover pre-midnight reads of early classes
-    return sb_rows(
-        client,
-        [
-            ("start_time", f"gte.{s_utc.isoformat()}"),
-            ("start_time", f"lt.{e_utc.isoformat()}"),
-            ("observed_at", f"gte.{obs_lo.isoformat()}"),
-            ("observed_at", f"lt.{e_utc.isoformat()}"),
-        ],
-        with_time_raw=with_time_raw,
-    )
+    rows: list[dict] = []
+    for brand in sheet_format.BRAND_ORDER:
+        rows.extend(
+            sb_rows(
+                client,
+                [
+                    ("brand", f"eq.{brand}"),
+                    ("start_time", f"gte.{s_utc.isoformat()}"),
+                    ("start_time", f"lt.{e_utc.isoformat()}"),
+                    ("observed_at", f"gte.{obs_lo.isoformat()}"),
+                    ("observed_at", f"lt.{e_utc.isoformat()}"),
+                ],
+                with_time_raw=with_time_raw,
+            )
+        )
+    return rows
 
 
 def _days_from(earliest: str, today_et: str) -> list[str]:
