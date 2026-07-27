@@ -3,7 +3,11 @@
 # served openly in each brand's own web pages — no secrets live here.
 
 defaults:
-  horizon_days: 14   # how far ahead each run snapshots
+  # How far ahead each hourly run records upcoming sessions. Lowered 14->7 to
+  # halve write volume (the main driver of DB growth); 7 days still captures
+  # each session's full fill-up curve. The pre-start sweep is unaffected (it
+  # always looks ~8 min ahead).
+  horizon_days: 7
 
 brands:
   bathhouse:
