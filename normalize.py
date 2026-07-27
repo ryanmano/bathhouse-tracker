@@ -90,21 +90,26 @@ def make_record(
     }
 
 
-# Bulky presentation-only keys stripped from the stored raw JSON — they are
-# re-fetchable and never needed for fill/price analysis.
-BULKY_RAW_KEYS = {
-    "description", "image", "images", "imageUrl", "photo_urls", "class_image",
-    "formatted_address", "studioAddress", "layout",
-}
-
-
 def slim_raw(obj: Any) -> Any:
-    """Recursively drop bulky presentation keys from a raw platform object."""
-    if isinstance(obj, dict):
-        return {k: slim_raw(v) for k, v in obj.items() if k not in BULKY_RAW_KEYS}
-    if isinstance(obj, list):
-        return [slim_raw(v) for v in obj]
-    return obj
+    """Keep only the fields we actually read back out of `raw`.
+
+    The stored raw JSON is used for exactly one thing: deriving each session's
+    end time for the "Time" range column (see sheet_format.EXTRA_SELECTS —
+    raw.end_time, raw.duration, raw.class_type.duration). Storing the whole
+    session object bloats the table ~10x and is what exhausted the free-tier
+    disk, so we persist only those keys. Everything else is re-fetchable live.
+    """
+    if not isinstance(obj, dict):
+        return {}
+    slim: dict[str, Any] = {}
+    if obj.get("end_time") is not None:
+        slim["end_time"] = obj["end_time"]
+    if obj.get("duration") is not None:
+        slim["duration"] = obj["duration"]
+    ct = obj.get("class_type")
+    if isinstance(ct, dict) and ct.get("duration") is not None:
+        slim["class_type"] = {"duration": ct["duration"]}
+    return slim
 
 
 def new_client(**kwargs: Any) -> httpx.Client:

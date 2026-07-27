@@ -45,6 +45,9 @@ SHARE_DIR = "/Bathhouse Tracker"
 # Reliable 5-minute pre-start triggering began this date; earlier days had
 # off timing and were removed, so we never (re)publish files before it.
 EARLIEST_DAY = "2026-07-07"
+RECENT_WINDOW_DAYS = 5   # days back to (re)build daily files from the DB
+DAILY_KEEP = 3           # keep only the N most recent daily files in the folder
+SUMMARY_DAYS = 30        # master summary spans the DB retention window
 
 
 def _sb_headers() -> dict:
@@ -185,6 +188,31 @@ def dropbox_upload(client, token: str, path: str, data: bytes) -> None:
     print(f"uploaded {path} ({len(data):,} bytes)")
 
 
+def dropbox_delete(client, token: str, path: str) -> None:
+    client.post(
+        "https://api.dropboxapi.com/2/files/delete_v2",
+        headers={"Authorization": f"Bearer {token}"},
+        json={"path": path},
+    )
+
+
+def prune_daily_files(client, token: str, keep: int) -> None:
+    """Keep only the `keep` most recent prestart-summary-*.xlsx in the folder."""
+    r = client.post(
+        "https://api.dropboxapi.com/2/files/list_folder",
+        headers={"Authorization": f"Bearer {token}"}, json={"path": SHARE_DIR},
+    )
+    if r.status_code != 200:
+        return
+    daily = sorted(
+        e["name"] for e in r.json().get("entries", [])
+        if e["name"].startswith("prestart-summary-") and e["name"].endswith(".xlsx")
+    )
+    for name in daily[:-keep] if len(daily) > keep else []:
+        dropbox_delete(client, token, f"{SHARE_DIR}/{name}")
+        print(f"removed old daily file {name}")
+
+
 def main() -> int:
     load_dotenv(Path(__file__).resolve().parent / ".env")
     missing = [
@@ -207,25 +235,30 @@ def main() -> int:
 
         now = datetime.now(timezone.utc)
         today_et = now.astimezone(EASTERN).date().isoformat()
-        days = _days_from(EARLIEST_DAY, today_et)  # each queried in a small chunk
 
-        # prestart-summary-YYYY-MM-DD.xlsx — one clean daily file per Eastern
-        # day. Today refreshes every run; completed days are written once.
-        for day in days:
+        # Daily files: (re)build the recent window, keep only the 3 newest.
+        recent_days = _days_from(
+            (now - timedelta(days=RECENT_WINDOW_DAYS)).astimezone(EASTERN).date().isoformat(),
+            today_et,
+        )
+        for day in recent_days:
             path = f"{SHARE_DIR}/prestart-summary-{day}.xlsx"
             if day != today_et and dropbox_exists(client, token, path):
-                continue  # completed day already published — leave it
+                continue  # completed day already published
             day_rows = fetch_day(client, day, with_time_raw=True)
             if not sheet_format.prestart_rows(day_rows):
-                continue  # no classes have started yet
-            data = sheet_format.prestart_xlsx_bytes(day_rows)  # one tab per club
-            dropbox_upload(client, token, path, data)
+                continue
+            dropbox_upload(client, token, path, sheet_format.prestart_xlsx_bytes(day_rows))
+        prune_daily_files(client, token, keep=DAILY_KEEP)
 
-        # summary.xlsx — running overview: one row per club per day with that
-        # day's final totals. Built from the same per-day chunks (light query,
-        # no raw JSON needed since the summary has no Time column).
+        # Master summary: rebuilt from the DB over its full retention window.
+        # Rows are tiny now (minimal raw), so retaining weeks of data is cheap
+        # and the summary can be derived directly — no separate cache needed.
         sum_rows: list[dict] = []
-        for day in days:
+        for day in _days_from(
+            (now - timedelta(days=SUMMARY_DAYS)).astimezone(EASTERN).date().isoformat(),
+            today_et,
+        ):
             sum_rows.extend(fetch_day(client, day, with_time_raw=False))
         summary = sheet_format.summary_xlsx_bytes(sum_rows, earliest=EARLIEST_DAY)
         dropbox_upload(client, token, f"{SHARE_DIR}/summary.xlsx", summary)

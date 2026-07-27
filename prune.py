@@ -18,7 +18,7 @@ import normalize
 import sheet_format
 from run import load_dotenv
 
-RETENTION_DAYS = int(os.environ.get("RETENTION_DAYS", "21"))
+RETENTION_DAYS = int(os.environ.get("RETENTION_DAYS", "30"))
 BATCH = 20000
 
 
