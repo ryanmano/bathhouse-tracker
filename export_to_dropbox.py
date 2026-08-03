@@ -26,6 +26,7 @@ from __future__ import annotations
 import json
 import os
 import sys
+import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -175,17 +176,27 @@ def dropbox_exists(client, token: str, path: str) -> bool:
 
 
 def dropbox_upload(client, token: str, path: str, data: bytes) -> None:
-    resp = client.post(
-        "https://content.dropboxapi.com/2/files/upload",
-        headers={
-            "Authorization": f"Bearer {token}",
-            "Dropbox-API-Arg": json.dumps({"path": path, "mode": "overwrite", "mute": True}),
-            "Content-Type": "application/octet-stream",
-        },
-        content=data,
-    )
-    resp.raise_for_status()
-    print(f"uploaded {path} ({len(data):,} bytes)")
+    # Dropbox returns 409 (conflict / too_many_write_operations) when writes
+    # overlap or come too fast — a scrape and a sweep can collide. Retry with
+    # backoff; these clear within a few seconds.
+    for attempt in range(6):
+        resp = client.post(
+            "https://content.dropboxapi.com/2/files/upload",
+            headers={
+                "Authorization": f"Bearer {token}",
+                "Dropbox-API-Arg": json.dumps(
+                    {"path": path, "mode": "overwrite", "mute": True}
+                ),
+                "Content-Type": "application/octet-stream",
+            },
+            content=data,
+        )
+        if resp.status_code == 409 and attempt < 5:
+            time.sleep(2 * (attempt + 1))
+            continue
+        resp.raise_for_status()
+        print(f"uploaded {path} ({len(data):,} bytes)")
+        return
 
 
 def dropbox_delete(client, token: str, path: str) -> None:

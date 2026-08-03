@@ -30,6 +30,10 @@ jobs:
         run: python run.py
 
       - name: Publish spreadsheets to Dropbox
+        # Non-fatal: data is already saved to the DB by the step above, so a
+        # transient Dropbox error must not fail the job (which would email us).
+        # The next run republishes anyway.
+        continue-on-error: true
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
