@@ -1,30 +1,67 @@
 # Bath House Market-Research Pipeline
 
-Hourly snapshots of class schedules, availability, and pricing for three NYC bath
-houses — **Bathhouse** (Trybe), **Othership** (Mariana Tek), **Lore Bathing Club**
+Pre-start snapshots of class schedules, availability, and pricing for three NYC
+bath houses — **Bathhouse** (Trybe), **Othership** (Mariana Tek), **Lore Bathing Club**
 (Arketa) — stored append-only in Supabase for fill-rate and dynamic-pricing
 analysis over time. Endpoint discovery and field mappings are documented in
 [RECON.md](RECON.md).
 
 ## How it works
 
-Every run (hourly via GitHub Actions, or manual):
+Data capture is the **pre-start sweep** (`sweep.yml` → `run.py --sweep`), which
+runs ~every 5 minutes and snapshots only the sessions about to begin:
 
 1. `run.py` loads `config/brands.yaml`, calls each platform scraper
    (`scrapers/trybe.py`, `scrapers/mariana_tek.py`, `scrapers/arketa.py`),
-2. each scraper fetches the next 14 days of bookable sessions from the platform's
-   public JSON API and normalizes them via `normalize.make_record()`,
-3. all records get one shared `observed_at` timestamp and are batch-inserted into
-   the `snapshots` table (duplicate `(brand, session_id, observed_at)` rows are
-   ignored, so re-runs are idempotent),
+2. each scraper fetches a 1-day window from the platform's public JSON API and
+   normalizes it via `normalize.make_record()`; the sweep then keeps only
+   sessions starting within `SWEEP_AHEAD_MIN` (8 min) — about **5 rows a run**,
+3. those records get one shared `observed_at` timestamp and are batch-inserted
+   into the `snapshots` table (duplicate `(brand, session_id, observed_at)` rows
+   are ignored, so re-runs are idempotent),
 4. a per-brand summary is printed; one brand failing never aborts the others.
+
+A second hourly job (`scrape.yml`, named **publish**) writes no snapshots — it
+only builds the Dropbox spreadsheets and runs retention (`prune.py`).
 
 ~10 HTTP requests per run total, honest User-Agent, retries with backoff.
 
-> **Current state (2026-07-02):** cloud mode is live — hourly GitHub Actions
-> runs (repo `ryanmano/bathhouse-tracker`, private) writing to Supabase project
+> **Current state (2026-10-14):** capture is sweep-only. The hourly
+> full-schedule snapshot was removed after it filled the Supabase free-tier
+> size quota for the third time — see *Storage* below. Cloud mode is live (repo
+> `ryanmano/bathhouse-tracker`, now public) writing to Supabase project
 > `rtahlkpxzyjcjtxdryzg`. The local launchd job is unloaded; ~3 early local
 > snapshots remain in `~/BathhouseData/snapshots.db`.
+
+## Storage — why capture is sweep-only
+
+The hourly job used to snapshot the full 7-day schedule for every brand: ~1,293
+rows an hour, ~31,000 a day, about **96% of everything in the table**. That
+exhausted the 500MB free-tier quota repeatedly, and on 2026-10-14 Supabase
+restricted the project with `exceed_db_size_quota` — which rejects **reads as
+well as writes**, so `prune.py` could not clean up and the pipeline could not
+recover on its own.
+
+Those rows earned nothing. `sheet_format.prestart_rows()` keeps, per class, only
+the **last reading taken at or before the class start**, and the 5-minute sweep
+always has a reading closer to start than any hourly scrape — so the hourly rows
+never won, and removing them changed nothing in the published spreadsheets.
+
+Capture is now ~1,100 rows/day instead of ~31,000 (**~28× less**), which stays
+far under the free tier at the 21-day retention window.
+
+What this costs: the fill-rate *curve* — how a class filled over the days before
+it started — is no longer recorded. Only the final pre-start state is. If that
+history is ever wanted again, re-add a `python run.py` step to `scrape.yml` at a
+low cadence and size the retention window to match.
+
+If the quota is ever hit again, deletes alone will not free disk; clear it from
+the Supabase SQL editor with:
+
+```sql
+set default_transaction_read_only = 'off';  -- restricted projects are read-only
+truncate table snapshots;                   -- frees space immediately
+```
 
 ## Local mode (no accounts) — optional alternative
 
@@ -67,8 +104,8 @@ Supabase/GitHub setup below — nothing about local mode conflicts with it.
 3. **Install**: `pip install -r requirements.txt` (Python 3.11+).
 4. **GitHub Actions**: push this repo to GitHub and add `SUPABASE_URL` and
    `SUPABASE_SERVICE_KEY` as repository **secrets** (Settings → Secrets and
-   variables → Actions). The workflow (`.github/workflows/scrape.yml`) runs
-   hourly and on manual dispatch.
+   variables → Actions). `sweep.yml` captures data ~every 5 min; `scrape.yml`
+   publishes + prunes hourly; both also accept manual dispatch.
 
 ## Running
 
@@ -103,7 +140,9 @@ where brand = 'bathhouse' and session_id = '<SESSION_ID>'
 order by observed_at;
 ```
 
-**Fill-rate curve as a session approaches its start:**
+**Fill-rate curve as a session approaches its start** — only meaningful for rows
+captured before 2026-10-02, when the hourly full-schedule snapshot still ran (see
+*Storage*); sweep-only capture records a single pre-start reading per session:
 ```sql
 select observed_at,
        round(extract(epoch from (start_time - observed_at)) / 3600, 1) as hours_to_start,
@@ -124,13 +163,24 @@ order by observed_at;
 
 ## Scheduling notes (GitHub Actions)
 
-- Cadence is hourly (`0 * * * *`); switch to every 30 min by editing one line in
-  `scrape.yml` (`0,30 * * * *`).
+- Capture cadence lives in `sweep.yml` (~every 5 min); `scrape.yml` (publish +
+  retention) is hourly at `:23`.
 - Scheduled workflows are **best-effort** — runs can start minutes late under load.
 - A **public** repo gets unlimited Actions minutes; a **private** repo is capped
-  (~2,000 min/mo — hourly ~1–2 min runs fit comfortably; 30-min cadence may not).
-- GitHub **disables schedules after ~60 days of repo inactivity** — an occasional
-  commit or a manual dispatch keeps it alive.
+  (~2,000 min/mo).
+- GitHub **disables schedules after ~60 days of repo inactivity**, and a disabled
+  workflow also rejects `workflow_dispatch` — so the external Supabase pg_cron
+  trigger dies with it. This took the whole pipeline down from 2026-10-02 to
+  2026-10-14 with no failed run and no alert: the last push was 2026-08-03,
+  exactly 60 days before the schedules stopped firing. `keepalive.yml` now
+  pushes an empty commit on the 1st and 21st of each month so the clock never
+  runs out. If capture ever goes quiet again, check workflow state first:
+
+  ```bash
+  gh api repos/ryanmano/bathhouse-tracker/actions/workflows \
+    --jq '.workflows[] | "\(.name)\t\(.state)"'   # want: active, not disabled_inactivity
+  gh workflow enable scrape.yml && gh workflow enable sweep.yml
+  ```
 
 ## Guardrails
 

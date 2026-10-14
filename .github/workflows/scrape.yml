@@ -1,4 +1,22 @@
-name: scrape
+name: publish
+
+# Publishes the Dropbox spreadsheets and enforces database retention.
+#
+# This job used to also take the hourly full-schedule snapshot ("Snapshot all
+# brands"), which wrote ~1,293 rows every hour — ~96% of everything in the
+# table. That filled the Supabase free-tier size quota three times
+# (2026-07-27, and again on 2026-10-14 when the project was restricted with
+# exceed_db_size_quota and stopped accepting reads AND writes).
+#
+# Those rows were dead weight: sheet_format.prestart_rows() keeps, per class,
+# only the last reading taken before the class started, and the 5-minute
+# prestart sweep (sweep.yml) always has a reading closer to start than any
+# hourly scrape. So the hourly rows never won, and dropping them changes
+# nothing in the published spreadsheets. Data capture now comes from the sweep
+# alone: ~1,100 rows/day instead of ~31,000.
+#
+# The filename stays scrape.yml so the external Supabase pg_cron dispatch
+# (which targets the workflow by file) keeps working.
 
 on:
   schedule:
@@ -9,7 +27,7 @@ on:
   workflow_dispatch: {}
 
 jobs:
-  scrape:
+  publish:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -23,16 +41,10 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Snapshot all brands
-        env:
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-        run: python run.py
-
       - name: Publish spreadsheets to Dropbox
-        # Non-fatal: data is already saved to the DB by the step above, so a
-        # transient Dropbox error must not fail the job (which would email us).
-        # The next run republishes anyway.
+        # Non-fatal: the sweep already saved the data to the DB, so a transient
+        # Dropbox error must not fail the job (which would email us). The next
+        # run republishes anyway.
         continue-on-error: true
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
@@ -47,4 +59,5 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          RETENTION_DAYS: "21"  # set explicitly so the window is visible here
         run: python prune.py

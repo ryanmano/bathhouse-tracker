@@ -1,0 +1,36 @@
+name: keepalive
+
+# GitHub disables scheduled workflows after 60 days with no repository
+# activity. That silently killed BOTH scrape and sweep on 2026-10-02: the last
+# push was 2026-08-03, exactly 60 days earlier. Every run up to that moment
+# succeeded, so nothing failed and nothing alerted — the schedule just stopped.
+#
+# It also took down what the comments called the "dependable path": a disabled
+# workflow rejects workflow_dispatch too, so the external Supabase pg_cron
+# trigger died at the same instant as GitHub's own cron.
+#
+# This pushes an empty commit twice a month, well inside the 60-day window, so
+# the clock never runs out. Pushes made with the default GITHUB_TOKEN do not
+# trigger workflow runs, so this cannot loop.
+
+on:
+  schedule:
+    - cron: "17 5 1,21 * *"  # 1st and 21st of each month
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Push an empty commit to reset the inactivity clock
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit --allow-empty -m "chore: keepalive - reset GitHub's 60-day schedule timer"
+          git push

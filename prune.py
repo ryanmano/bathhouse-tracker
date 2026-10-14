@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Delete snapshot rows older than the retention window (default 21 days).
 
-Runs after each scrape so the table stays bounded. Deletes are done by primary
-key (indexed) in batches — the id boundary for the cutoff date is found by
+Runs after each publish run so the table stays bounded. Deletes are done by
+primary key (indexed) in batches — the id boundary for the cutoff date is found by
 binary search using cheap PK lookups — so this never triggers the full-table
 scan timeouts that an `observed_at < cutoff` delete would.
 """
@@ -18,7 +18,7 @@ import normalize
 import sheet_format
 from run import load_dotenv
 
-RETENTION_DAYS = int(os.environ.get("RETENTION_DAYS", "30"))
+RETENTION_DAYS = int(os.environ.get("RETENTION_DAYS", "21"))
 BATCH = 20000
 
 
